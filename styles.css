@@ -5,6 +5,13 @@
       box-sizing: border-box;
 }
 
+/* Ensure images are visible */
+img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+}
+
 html {
       scroll-behavior: smooth;
 }
@@ -541,6 +548,13 @@ body {
       color: #e0e6ed;
       font-size: 1.1rem;
       font-weight: 600;
+      margin-bottom: 0.5rem;
+}
+
+.certificate-issuer {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
 }
 
 /* Contact Section */
