@@ -1,24 +1,6 @@
-// DOM Elements
-const mobileMenu = document.getElementById('mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-const contactForm = document.getElementById('contactForm');
-
-// Mobile Navigation Toggle
-mobileMenu.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-      navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on nav links
-navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            navMenu.classList.remove('active');
-      });
-});
-
 // Smooth scrolling for navigation links
+const navLinks = document.querySelectorAll('.nav-link');
+
 navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -26,7 +8,7 @@ navLinks.forEach(link => {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-                  const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+                  const offsetTop = targetSection.offsetTop - 64; // Account for fixed navbar
                   window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -35,7 +17,7 @@ navLinks.forEach(link => {
       });
 });
 
-// Active navigation link highlighting
+// Active navigation link highlighting with modern colors
 window.addEventListener('scroll', () => {
       let current = '';
       const sections = document.querySelectorAll('section');
@@ -49,26 +31,112 @@ window.addEventListener('scroll', () => {
       });
 
       navLinks.forEach(link => {
-            link.classList.remove('active');
+            link.classList.remove('text-cyan-400');
+            link.classList.add('text-gray-300');
             if (link.getAttribute('href') === `#${current}`) {
-                  link.classList.add('active');
+                  link.classList.remove('text-gray-300');
+                  link.classList.add('text-cyan-400');
             }
       });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 20, 25, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.4)';
-      } else {
-            navbar.style.background = 'rgba(15, 20, 25, 0.95)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-      }
-});
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
 
-// Scroll animations
+if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = {
+                  name: document.getElementById('name').value,
+                  email: document.getElementById('email').value,
+                  subject: document.getElementById('subject').value,
+                  message: document.getElementById('message').value
+            };
+
+            // Basic validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                  showNotification('All fields are required!', 'error');
+                  return;
+            }
+
+            if (!isValidEmail(formData.email)) {
+                  showNotification('Please enter a valid email address.', 'error');
+                  return;
+            }
+
+            // Show success message
+            showNotification('Message sent successfully! 🚀', 'success');
+
+            // Log form data (in production, send to backend)
+            console.log('Form submitted:', formData);
+
+            // Reset form
+            contactForm.reset();
+      });
+}
+
+// Email validation
+function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+}
+
+// Modern notification system
+function showNotification(message, type) {
+      // Remove existing notifications
+      const existingNotifications = document.querySelectorAll('.notification');
+      existingNotifications.forEach(notification => notification.remove());
+
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = 'notification fixed top-20 right-4 text-white px-6 py-4 rounded-lg shadow-2xl z-50 flex items-center gap-3 max-w-md transform translate-x-full transition-transform duration-300 font-mono';
+
+      if (type === 'success') {
+            notification.classList.add('bg-gradient-to-r', 'from-green-600', 'to-emerald-600', 'border', 'border-green-400');
+      } else {
+            notification.classList.add('bg-gradient-to-r', 'from-red-600', 'to-rose-600', 'border', 'border-red-400');
+      }
+
+      notification.innerHTML = `
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} text-xl"></i>
+            <div class="flex-grow">
+                  <p class="font-semibold text-sm">${message}</p>
+            </div>
+            <button class="close-notification hover:opacity-80 transition-opacity">
+                  <i class="fas fa-times"></i>
+            </button>
+      `;
+
+      document.body.appendChild(notification);
+
+      // Animate in
+      setTimeout(() => {
+            notification.classList.remove('translate-x-full');
+            notification.classList.add('translate-x-0');
+      }, 100);
+
+      // Close functionality
+      const closeBtn = notification.querySelector('.close-notification');
+      closeBtn.addEventListener('click', () => {
+            closeNotification(notification);
+      });
+
+      // Auto remove after 5 seconds
+      setTimeout(() => {
+            closeNotification(notification);
+      }, 5000);
+}
+
+function closeNotification(notification) {
+      if (notification && notification.parentNode) {
+            notification.classList.remove('translate-x-0');
+            notification.classList.add('translate-x-full');
+            setTimeout(() => notification.remove(), 300);
+      }
+}
+
+// Scroll reveal animations
 const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -77,123 +145,42 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
             if (entry.isIntersecting) {
-                  entry.target.classList.add('visible');
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
             }
       });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe all sections for scroll animations
 document.addEventListener('DOMContentLoaded', () => {
-      const animatedElements = document.querySelectorAll('.project-card, .certificate-card, .education-item, .about-text, .contact-info, .contact-form');
-      animatedElements.forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
+      document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
       });
-});
 
-// Contact form handling
-contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Get form data
-      const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-      };
-
-      // Basic validation
-      if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-            showNotification('Please fill in all fields.', 'error');
-            return;
-      }
-
-      if (!isValidEmail(formData.email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-      }
-
-      // Simulate form submission (replace with actual submission logic)
-      showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-      contactForm.reset();
-});
-
-// Email validation
-function isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
-}
-
-// Notification system
-function showNotification(message, type) {
-      // Remove existing notifications
-      const existingNotifications = document.querySelectorAll('.notification');
-      existingNotifications.forEach(notification => notification.remove());
-
-      // Create notification element
-      const notification = document.createElement('div');
-      notification.className = `notification ${type}`;
-      notification.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-        <span>${message}</span>
-        <i class="fas fa-times close-notification"></i>
-    `;
-
-      // Add styles
-      notification.style.cssText = `
-        position: fixed;
-        top: 90px;
-        right: 20px;
-        background: ${type === 'success' ? '#2ecc71' : '#e74c3c'};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        max-width: 400px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    `;
-
-      document.body.appendChild(notification);
-
-      // Animate in
+      // Trigger animations on first load
       setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
+            document.querySelector('#home').style.opacity = '1';
+            document.querySelector('#home').style.transform = 'translateY(0)';
       }, 100);
-
-      // Close functionality
-      const closeBtn = notification.querySelector('.close-notification');
-      closeBtn.addEventListener('click', () => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => notification.remove(), 300);
-      });
-
-      // Auto remove after 5 seconds
-      setTimeout(() => {
-            if (notification.parentNode) {
-                  notification.style.transform = 'translateX(100%)';
-                  setTimeout(() => notification.remove(), 300);
-            }
-      }, 5000);
-}
+});
 
 // Scroll to top button
 const scrollTopBtn = document.createElement('button');
-scrollTopBtn.className = 'scroll-top';
+scrollTopBtn.className = 'fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg flex items-center justify-center shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 z-40 opacity-0 pointer-events-none hover:-translate-y-1 border border-cyan-400';
 scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 document.body.appendChild(scrollTopBtn);
 
 // Show/hide scroll to top button
 window.addEventListener('scroll', () => {
       if (window.scrollY > 500) {
-            scrollTopBtn.classList.add('visible');
+            scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            scrollTopBtn.classList.add('opacity-100');
       } else {
-            scrollTopBtn.classList.remove('visible');
+            scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            scrollTopBtn.classList.remove('opacity-100');
       }
 });
 
@@ -205,62 +192,9 @@ scrollTopBtn.addEventListener('click', () => {
       });
 });
 
-// Typing animation for hero title
-function typeWriter(element, text, speed = 100) {
-      let i = 0;
-      element.innerHTML = '';
-
-      function type() {
-            if (i < text.length) {
-                  element.innerHTML += text.charAt(i);
-                  i++;
-                  setTimeout(type, speed);
-            }
-      }
-
-      type();
-}
-
-// Initialize typing animation when page loads
-document.addEventListener('DOMContentLoaded', () => {
-      const heroTitle = document.querySelector('.hero-title');
-      if (heroTitle) {
-            const originalText = heroTitle.textContent;
-            setTimeout(() => {
-                  typeWriter(heroTitle, originalText, 80);
-            }, 500);
-      }
-});
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero');
-      const rate = scrolled * -0.5;
-
-      if (hero) {
-            hero.style.transform = `translateY(${rate}px)`;
-      }
-});
-
-// Project card hover effects
-document.addEventListener('DOMContentLoaded', () => {
-      const projectCards = document.querySelectorAll('.project-card');
-
-      projectCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                  card.style.transform = 'translateY(-10px) rotateX(5deg)';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                  card.style.transform = 'translateY(0) rotateX(0)';
-            });
-      });
-});
-
 // Certificate modal functionality
 document.addEventListener('DOMContentLoaded', () => {
-      const certificateCards = document.querySelectorAll('.certificate-card');
+      const certificateCards = document.querySelectorAll('#certificates .group');
 
       certificateCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -269,150 +203,150 @@ document.addEventListener('DOMContentLoaded', () => {
 
                   // Create modal
                   const modal = document.createElement('div');
-                  modal.className = 'certificate-modal';
+                  modal.className = 'fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 opacity-0 transition-opacity duration-300 p-4';
                   modal.innerHTML = `
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <img src="${img.src}" alt="${title}">
-                    <h3>${title}</h3>
-                </div>
-            `;
-
-                  // Add modal styles
-                  modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            `;
-
-                  const modalContent = modal.querySelector('.modal-content');
-                  modalContent.style.cssText = `
-                background: #1a202c;
-                padding: 2rem;
-                border-radius: 10px;
-                text-align: center;
-                position: relative;
-                max-width: 80%;
-                max-height: 80%;
-                border: 1px solid rgba(64, 144, 203, 0.3);
-            `;
-
-                  const modalImg = modal.querySelector('img');
-                  modalImg.style.cssText = `
-                max-width: 100%;
-                max-height: 70vh;
-                object-fit: contain;
-                margin-bottom: 1rem;
-            `;
-
-                  const closeBtn = modal.querySelector('.close-modal');
-                  closeBtn.style.cssText = `
-                position: absolute;
-                top: 10px;
-                right: 15px;
-                font-size: 2rem;
-                cursor: pointer;
-                color: #a0aec0;
-            `;
-
-                  // Style the modal title
-                  const modalTitle = modal.querySelector('h3');
-                  if (modalTitle) {
-                        modalTitle.style.color = '#e0e6ed';
-                  }
+                        <div class="relative bg-gradient-to-br from-cyan-900/30 to-purple-900/30 backdrop-blur-sm p-8 rounded-2xl max-w-4xl max-h-[90vh] overflow-auto border-2 border-cyan-500/30 neon-border">
+                              <button class="absolute top-4 right-4 w-10 h-10 bg-red-600 hover:bg-red-500 rounded-lg flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110">
+                                    <i class="fas fa-times text-xl"></i>
+                              </button>
+                              <img src="${img.src}" alt="${title}" class="w-full h-auto rounded-lg mb-4 border border-cyan-500/20">
+                              <h3 class="text-2xl font-bold text-center text-cyan-400 font-mono">${title}</h3>
+                        </div>
+                  `;
 
                   document.body.appendChild(modal);
 
                   // Animate in
                   setTimeout(() => {
-                        modal.style.opacity = '1';
+                        modal.classList.remove('opacity-0');
                   }, 10);
 
                   // Close functionality
                   const closeModal = () => {
-                        modal.style.opacity = '0';
+                        modal.classList.add('opacity-0');
                         setTimeout(() => modal.remove(), 300);
                   };
 
-                  closeBtn.addEventListener('click', closeModal);
+                  modal.querySelector('button').addEventListener('click', closeModal);
                   modal.addEventListener('click', (e) => {
                         if (e.target === modal) closeModal();
                   });
 
                   // Close on escape key
-                  document.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape') closeModal();
-                  });
+                  const handleEscape = (e) => {
+                        if (e.key === 'Escape') {
+                              closeModal();
+                              document.removeEventListener('keydown', handleEscape);
+                        }
+                  };
+                  document.addEventListener('keydown', handleEscape);
             });
       });
 });
 
-// Preloader
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroSection = document.querySelector('#home');
+
+      if (heroSection && scrolled < window.innerHeight) {
+            const rate = scrolled * 0.15;
+            heroSection.style.transform = `translateY(${rate}px)`;
+      }
+});
+
+// Typing animation effect for code block
+function typeWriter(element, text, speed = 50) {
+      let i = 0;
+      const originalText = element.innerHTML;
+      element.innerHTML = '';
+      element.style.display = 'block';
+
+      function type() {
+            if (i < text.length) {
+                  element.innerHTML += text.charAt(i);
+                  i++;
+                  setTimeout(type, speed);
+            } else {
+                  element.innerHTML = originalText;
+            }
+      }
+
+      type();
+}
+
+// Cursor trail effect
+let coords = { x: 0, y: 0 };
+const circles = [];
+const colors = ['#00f5ff', '#7c3aed', '#06b6d4', '#9333ea'];
+
+for (let i = 0; i < 8; i++) {
+      const circle = document.createElement('div');
+      circle.className = 'cursor-trail';
+      circle.style.cssText = `
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: ${(8 - i) / 10};
+            background: ${colors[i % colors.length]};
+            transition: all 0.1s ease;
+            mix-blend-mode: screen;
+      `;
+      document.body.appendChild(circle);
+      circles.push(circle);
+}
+
+window.addEventListener('mousemove', (e) => {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+});
+
+function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach((circle, index) => {
+            circle.style.left = x - 4 + 'px';
+            circle.style.top = y - 4 + 'px';
+            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.offsetLeft - x) * 0.3;
+            y += (nextCircle.offsetTop - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+
+// Enhanced preloader with animation
 window.addEventListener('load', () => {
       const preloader = document.createElement('div');
-      preloader.className = 'preloader';
+      preloader.className = 'fixed inset-0 bg-gradient-to-br from-dark via-cyan-950/20 to-dark flex items-center justify-center z-50 transition-opacity duration-500';
       preloader.innerHTML = `
-        <div class="loader">
-            <div class="spinner"></div>
-            <p>Loading...</p>
-        </div>
-    `;
-
-      preloader.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #0f1419;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        transition: opacity 0.5s ease;
-    `;
-
-      const loader = preloader.querySelector('.loader');
-      loader.style.cssText = `
-        text-align: center;
-        color: #4090cb;
-    `;
-
-      const spinner = preloader.querySelector('.spinner');
-      spinner.style.cssText = `
-        width: 40px;
-        height: 40px;
-        border: 4px solid #2d3748;
-        border-top: 4px solid #4090cb;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 1rem;
-    `;
-
-      // Add spinner animation
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-      document.head.appendChild(style);
+            <div class="text-center">
+                  <div class="relative">
+                        <div class="w-20 h-20 border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin mx-auto mb-6"></div>
+                        <div class="absolute inset-0 w-20 h-20 border-4 border-purple-500/20 border-b-purple-500 rounded-full animate-spin mx-auto" style="animation-direction: reverse; animation-duration: 1.5s;"></div>
+                  </div>
+                  <p class="text-cyan-400 text-lg font-mono font-semibold animate-pulse">
+                        <span class="text-cyan-400">&lt;</span>Loading<span class="text-purple-400 animate-pulse">...</span><span class="text-cyan-400">/&gt;</span>
+                  </p>
+            </div>
+      `;
 
       document.body.appendChild(preloader);
 
-      // Hide preloader after a short delay
+      // Hide preloader
       setTimeout(() => {
-            preloader.style.opacity = '0';
+            preloader.classList.add('opacity-0');
             setTimeout(() => preloader.remove(), 500);
-      }, 1000);
+      }, 1500);
 });
+
+console.log('%c👨‍💻 Welcome to my Portfolio! ', 'background: linear-gradient(90deg, #00f5ff, #7c3aed); color: white; font-size: 20px; padding: 10px 20px; border-radius: 5px;');
+console.log('%cInterested in the code? Check out the repository on GitHub!', 'color: #00f5ff; font-size: 14px;');

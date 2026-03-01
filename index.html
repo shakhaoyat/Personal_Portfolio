@@ -1,126 +1,471 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Shakhaoyat Hossain Chad - Portfolio</title>
-      <link rel="stylesheet" href="styles.css">
+      <title>Shakhaoyat Hossain Chad - Software Developer</title>
+      <script src="https://cdn.tailwindcss.com"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+      <script>
+            tailwind.config = {
+                  theme: {
+                        extend: {
+                              colors: {
+                                    primary: '#00f5ff',
+                                    secondary: '#7c3aed',
+                                    accent: '#06b6d4',
+                                    dark: '#0a0e27',
+                              },
+                              fontFamily: {
+                                    'mono': ['JetBrains Mono', 'monospace'],
+                                    'sans': ['Inter', 'sans-serif'],
+                              },
+                              animation: {
+                                    'gradient': 'gradient 8s linear infinite',
+                                    'float': 'float 6s ease-in-out infinite',
+                                    'glow': 'glow 2s ease-in-out infinite alternate',
+                                    'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                                    'slide-up': 'slideUp 0.5s ease-out',
+                                    'code-typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+                              },
+                              keyframes: {
+                                    gradient: {
+                                          '0%, 100%': { backgroundPosition: '0% 50%' },
+                                          '50%': { backgroundPosition: '100% 50%' },
+                                    },
+                                    float: {
+                                          '0%, 100%': { transform: 'translateY(0px)' },
+                                          '50%': { transform: 'translateY(-20px)' },
+                                    },
+                                    glow: {
+                                          'from': { boxShadow: '0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(6, 182, 212, 0.3)' },
+                                          'to': { boxShadow: '0 0 40px rgba(0, 245, 255, 0.8), 0 0 60px rgba(6, 182, 212, 0.5)' },
+                                    },
+                                    slideUp: {
+                                          '0%': { transform: 'translateY(100px)', opacity: '0' },
+                                          '100%': { transform: 'translateY(0)', opacity: '1' },
+                                    },
+                                    typing: {
+                                          'from': { width: '0' },
+                                          'to': { width: '100%' }
+                                    },
+                                    'blink-caret': {
+                                          'from, to': { borderColor: 'transparent' },
+                                          '50%': { borderColor: '#00f5ff' }
+                                    }
+                              },
+                              backgroundImage: {
+                                    'grid-pattern': 'linear-gradient(to right, rgba(0, 245, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 245, 255, 0.1) 1px, transparent 1px)',
+                              }
+                        }
+                  }
+            }
+      </script>
+      <style>
+            body {
+                  background: #0a0e27;
+                  background-image:
+                        radial-gradient(at 0% 0%, rgba(0, 245, 255, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+                        radial-gradient(at 0% 100%, rgba(147, 51, 234, 0.1) 0px, transparent 50%);
+            }
+
+            .grid-bg {
+                  background-image:
+                        linear-gradient(to right, rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+                  background-size: 40px 40px;
+            }
+
+            .code-block {
+                  font-family: 'JetBrains Mono', monospace;
+                  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 245, 255, 0.1) 100%);
+                  border-left: 3px solid #00f5ff;
+            }
+
+            .neon-border {
+                  box-shadow: 0 0 10px rgba(0, 245, 255, 0.5),
+                        inset 0 0 10px rgba(0, 245, 255, 0.1);
+            }
+
+            .tech-card:hover {
+                  transform: translateY(-5px) scale(1.02);
+                  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+            }
+
+            @keyframes matrix {
+                  0% {
+                        transform: translateY(-100%);
+                  }
+
+                  100% {
+                        transform: translateY(100%);
+                  }
+            }
+
+            .matrix-rain {
+                  animation: matrix 10s linear infinite;
+            }
+      </style>
 </head>
 
-<body>
+<body class="text-gray-100 font-sans antialiased relative overflow-x-hidden">
       <!-- Navigation -->
-      <nav class="navbar">
-            <div class="nav-container">
-                  <div class="nav-logo">
-                        <h2>Shakhaoyat Hossain Chad</h2>
-                  </div>
-                  <ul class="nav-menu">
-                        <li class="nav-item">
-                              <a href="#home" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                              <a href="#about" class="nav-link">About</a>
-                        </li>
-                        <li class="nav-item">
-                              <a href="#education" class="nav-link">Education</a>
-                        </li>
-                        <li class="nav-item">
-                              <a href="#projects" class="nav-link">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                              <a href="#certificates" class="nav-link">Certificates</a>
-                        </li>
-                        <li class="nav-item">
-                              <a href="#contact" class="nav-link">Contact</a>
-                        </li>
-                  </ul>
-                  <div class="nav-toggle" id="mobile-menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
+      <nav
+            class="fixed top-0 w-full bg-dark/90 backdrop-blur-md z-50 border-b border-cyan-500/20 shadow-lg shadow-cyan-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="flex justify-between items-center h-16">
+                        <div class="flex-shrink-0 flex items-center gap-2">
+                              <div
+                                    class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center font-mono font-bold text-lg">
+                                    SC
+                              </div>
+                              <div class="hidden md:block">
+                                    <span class="text-lg font-mono font-bold">
+                                          <span class="text-cyan-400">&lt;</span>
+                                          <span class="text-white">Shakhaoyat Hossain Chad</span>
+                                          <span class="text-cyan-400">/&gt;</span>
+                                    </span>
+                              </div>
+                        </div>
+                        <ul class="hidden md:flex space-x-1">
+                              <li><a href="#home"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> Home
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                              <li><a href="#about"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> About
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                              <li><a href="#experience"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> Experience
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                              <li><a href="#skills"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> Skills
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                              <li><a href="#projects"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> Projects
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                              <li><a href="#certificates"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> Certificates
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                              <li><a href="#contact"
+                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
+                                          <span class="text-cyan-400">//</span> Contact
+                                          <span
+                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
+                                    </a></li>
+                        </ul>
+                        <div class="md:hidden" id="mobile-menu">
+                              <button class="text-cyan-400 hover:text-cyan-300 focus:outline-none">
+                                    <i class="fas fa-bars text-2xl"></i>
+                              </button>
+                        </div>
                   </div>
             </div>
       </nav>
 
       <!-- Hero Section -->
-      <section id="home" class="hero">
-            <div class="hero-container">
-                  <div class="hero-content">
-                        <div class="hero-text">
-                              <h1 class="hero-title">Hi, I'm <span class="highlight">Shakhaoyat Hossain Chad</span></h1>
-                              <p class="hero-subtitle">Full Stack Developer & Problem Solver</p>
-                              <p class="hero-description">
-                                    Passionate about creating innovative web solutions and bringing ideas to life
-                                    through code.
-                                    I specialize in modern web technologies and love building user-centric applications.
-                              </p>
-                              <div class="hero-buttons">
-                                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden grid-bg">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div
+                        class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-slow">
+                  </div>
+                  <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"
+                        style="animation-delay: 1s;"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+                  <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6 animate-slide-up">
+                              <!-- Terminal-like code block -->
+                              <div class="code-block p-4 rounded-lg backdrop-blur-sm border border-cyan-500/30 mb-6">
+                                    <div class="flex items-center gap-2 mb-3">
+                                          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                          <span class="text-xs text-gray-500 ml-2 font-mono">terminal.sh</span>
+                                    </div>
+                                    <div class="font-mono text-sm space-y-1">
+                                          <div><span class="text-cyan-400">$</span> <span
+                                                      class="text-gray-400">whoami</span></div>
+                                          <div class="text-white">Shakhaoyat Hossain Chad</div>
+                                          <div><span class="text-cyan-400">$</span> <span class="text-gray-400">cat
+                                                      role.txt</span></div>
+                                          <div class="text-purple-400">Full Stack Developer | Problem Solver</div>
+                                    </div>
                               </div>
-                              <div class="social-links">
-                                    <a href="https://linkedin.com/in/shakhaoyat12" target="_blank" class="social-link">
-                                          <i class="fab fa-linkedin"></i>
+
+                              <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                                    <span class="block text-gray-400 text-lg md:text-xl font-mono mb-2">Hi, I'm</span>
+                                    <span
+                                          class="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                                          Shakhaoyat Hossain
+                                    </span>
+                                    <span class="block text-2xl md:text-4xl mt-2 font-mono">
+                                          <span class="text-cyan-400">&lt;</span>
+                                          <span class="text-white">Developer</span>
+                                          <span class="text-cyan-400">/&gt;</span>
+                                    </span>
+                              </h1>
+
+                              <p class="text-lg text-gray-400 leading-relaxed font-mono">
+                                    <span class="text-cyan-400">/*</span> Crafting innovative digital solutions with
+                                    clean code and modern technologies. Passionate about turning ideas into reality
+                                    through software development. <span class="text-cyan-400">*/</span>
+                              </p>
+
+                              <div class="flex flex-wrap gap-4 pt-4">
+                                    <a href="#projects"
+                                          class="group relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50 hover:-translate-y-1">
+                                          <span class="relative z-10 flex items-center gap-2 font-mono font-semibold">
+                                                <i class="fas fa-code"></i>
+                                                View Projects
+                                          </span>
+                                          <div
+                                                class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                          </div>
                                     </a>
-                                    <a href="https://github.com/shakhaoyat" target="_blank" class="social-link">
-                                          <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="mailto:shakhaoyathossain.12@gmail.com" class="social-link">
+                                    <a href="#contact"
+                                          class="px-6 py-3 border-2 border-cyan-500/50 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 hover:-translate-y-1 font-mono font-semibold flex items-center gap-2">
                                           <i class="fas fa-envelope"></i>
+                                          Get In Touch
+                                    </a>
+                                    <a href="#"
+                                          class="px-6 py-3 border-2 border-purple-500/50 rounded-lg hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 hover:-translate-y-1 font-mono font-semibold flex items-center gap-2">
+                                          <i class="fas fa-download"></i>
+                                          Resume
+                                    </a>
+                              </div>
+
+                              <div class="flex gap-4 pt-4">
+                                    <a href="https://linkedin.com/in/shakhaoyat12" target="_blank"
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          <i
+                                                class="fab fa-linkedin text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                                    </a>
+                                    <a href="https://github.com/shakhaoyat" target="_blank"
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          <i
+                                                class="fab fa-github text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                                    </a>
+                                    <a href="mailto:shakhaoyathossain.12@gmail.com"
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          <i
+                                                class="fas fa-envelope text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                                    </a>
+                                    <a href="#" target="_blank"
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          <i
+                                                class="fab fa-twitter text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
                                     </a>
                               </div>
                         </div>
-                        <div class="hero-image">
-                              <img src="./image/Profile/propic.png" alt="Shakhaoyat Hossain" class="profile-img">
+
+                        <div class="flex justify-center relative">
+                              <!-- Hexagon frame with profile -->
+                              <div class="relative group">
+                                    <div
+                                          class="absolute -inset-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition duration-1000 animate-glow">
+                                    </div>
+                                    <div class="relative">
+                                          <div
+                                                class="absolute inset-0 border-4 border-cyan-400/50 rounded-full animate-pulse-slow">
+                                          </div>
+                                          <div class="absolute -inset-2 border-2 border-purple-500/30 rounded-full animate-pulse-slow"
+                                                style="animation-delay: 0.5s;"></div>
+                                          <img src="./image/Profile/propic.png" alt="Shakhaoyat Hossain"
+                                                class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-cyan-500/50 shadow-2xl animate-float">
+                                    </div>
+                              </div>
+
+                              <!-- Floating tech icons -->
+                              <div class="absolute top-10 -right-5 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm rounded-lg border border-cyan-500/30 flex items-center justify-center animate-float"
+                                    style="animation-delay: 0.2s;">
+                                    <i class="fab fa-python text-2xl text-cyan-400"></i>
+                              </div>
+                              <div class="absolute bottom-10 -left-5 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm rounded-lg border border-purple-500/30 flex items-center justify-center animate-float"
+                                    style="animation-delay: 0.5s;">
+                                    <i class="fab fa-react text-2xl text-purple-400"></i>
+                              </div>
+                              <div class="absolute top-1/2 -right-10 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-600/20 backdrop-blur-sm rounded-lg border border-blue-500/30 flex items-center justify-center animate-float"
+                                    style="animation-delay: 0.8s;">
+                                    <i class="fab fa-node-js text-xl text-blue-400"></i>
+                              </div>
                         </div>
                   </div>
             </div>
       </section>
 
       <!-- About Section -->
-      <section id="about" class="about">
-            <div class="container">
-                  <h2 class="section-title">About Me</h2>
-                  <div class="about-content">
-                        <div class="about-text">
-                              <p>
-                                    I'm a passionate developer with a strong foundation in web technologies and a keen
-                                    eye for detail.
-                                    My journey in programming started with curiosity and has evolved into a deep
-                                    commitment to creating
-                                    meaningful digital experiences.
-                              </p>
-                              <p>
-                                    I enjoy working with modern frameworks and technologies, always staying updated with
-                                    the latest
-                                    trends in web development. My goal is to build applications that not only look great
-                                    but also
-                                    provide exceptional user experiences.
-                              </p>
-                              <div class="skills">
-                                    <h3>Skills & Technologies</h3>
-                                    <div class="skill-grid">
-                                          <span class="skill-tag">HTML5</span>
-                                          <span class="skill-tag">CSS3</span>
-                                          <span class="skill-tag">JavaScript</span>
-                                          <span class="skill-tag">Python</span>
-                                          <span class="skill-tag">Django</span>
-                                          <span class="skill-tag">Java</span>
-                                          <span class="skill-tag">C++</span>
-                                          <span class="skill-tag">Cloud Computing</span>
-                                          <span class="skill-tag">Machine Learning</span>
-                                          <span class="skill-tag">Deep Learning</span>
-                                          <span class="skill-tag">Artificial Intelligence</span>
-                                          <span class="skill-tag">TensorFlow</span>
-                                          <span class="skill-tag">NumPy</span>
-                                          <span class="skill-tag">Pandas</span>
-                                          <span class="skill-tag">Scikit-Learn</span>
-                                          <span class="skill-tag">Matplotlib</span>
-                                          <span class="skill-tag">Seaborn</span>
-                                          <span class="skill-tag">UI/UX Design</span>
-                                          <span class="skill-tag">CSS Flexbox</span>
+      <section id="about" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-12">
+                        <span class="text-cyan-400 font-mono text-sm">&lt;about&gt;</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                              <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">About
+                                    Me</span>
+                        </h2>
+                        <span class="text-cyan-400 font-mono text-sm">&lt;/about&gt;</span>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Profile Info -->
+                        <div class="space-y-6">
+                              <div
+                                    class="bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                                    <div class="flex items-start gap-4 mb-6">
+                                          <div
+                                                class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-user-tie text-xl"></i>
+                                          </div>
+                                          <div>
+                                                <h3 class="text-2xl font-bold mb-2 text-white">Professional Background
+                                                </h3>
+                                                <p class="text-gray-400 leading-relaxed">
+                                                      Computer Science graduate passionate about software development
+                                                      with expertise in full-stack web development and emerging
+                                                      technologies.
+                                                </p>
+                                          </div>
+                                    </div>
+                                    <div class="space-y-4 text-gray-400 font-mono text-sm">
+                                          <div class="flex items-center gap-3">
+                                                <span class="text-cyan-400">▹</span>
+                                                <span>B.Sc. in Computer Science & Engineering</span>
+                                          </div>
+                                          <div class="flex items-center gap-3">
+                                                <span class="text-cyan-400">▹</span>
+                                                <span>Full Stack Development | AI/ML Enthusiast</span>
+                                          </div>
+                                          <div class="flex items-center gap-3">
+                                                <span class="text-cyan-400">▹</span>
+                                                <span>Clean Code Advocate | Problem Solver</span>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div
+                                    class="bg-gradient-to-br from-purple-500/10 to-pink-600/10 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
+                                    <div class="flex items-start gap-4">
+                                          <div
+                                                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-rocket text-xl"></i>
+                                          </div>
+                                          <div>
+                                                <h3 class="text-2xl font-bold mb-2 text-white">What I Do</h3>
+                                                <p class="text-gray-400 leading-relaxed mb-4">
+                                                      I transform ideas into scalable digital solutions using modern
+                                                      technologies. My focus is on writing clean, efficient code and
+                                                      creating exceptional user experiences.
+                                                </p>
+                                                <div class="flex flex-wrap gap-2">
+                                                      <span
+                                                            class="px-3 py-1 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-xs text-cyan-300">Web
+                                                            Development</span>
+                                                      <span
+                                                            class="px-3 py-1 bg-blue-500/20 border border-blue-500/40 rounded-full text-xs text-blue-300">API
+                                                            Design</span>
+                                                      <span
+                                                            class="px-3 py-1 bg-purple-500/20 border border-purple-500/40 rounded-full text-xs text-purple-300">ML/AI</span>
+                                                      <span
+                                                            class="px-3 py-1 bg-pink-500/20 border border-pink-500/40 rounded-full text-xs text-pink-300">IoT
+                                                            Projects</span>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- Education Timeline -->
+                        <div class="space-y-4">
+                              <div class="flex items-center gap-2 mb-6">
+                                    <i class="fas fa-graduation-cap text-cyan-400 text-xl"></i>
+                                    <h3 class="text-2xl font-bold text-white font-mono">Education Journey</h3>
+                              </div>
+
+                              <div class="relative pl-8 pb-8 border-l-2 border-cyan-500/30">
+                                    <div
+                                          class="absolute -left-2 top-0 w-4 h-4 bg-cyan-500 rounded-full border-4 border-dark">
+                                    </div>
+                                    <div
+                                          class="bg-gradient-to-br from-cyan-500/10 to-blue-600/10 rounded-lg p-6 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:transform hover:-translate-y-1">
+                                          <div class="flex items-center gap-2 mb-2">
+                                                <span
+                                                      class="px-3 py-1 bg-cyan-500/20 rounded-full text-xs font-mono text-cyan-300">2021
+                                                      - 2025</span>
+                                          </div>
+                                          <h4 class="text-xl font-bold text-white mb-1">B.Sc. in CSE</h4>
+                                          <p class="text-cyan-400 text-sm mb-2">Varendra University, Rajshahi</p>
+                                          <div
+                                                class="inline-block px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-xs font-mono mb-3">
+                                                CGPA: 3.31/4.00
+                                          </div>
+                                          <p class="text-gray-400 text-sm">Specialized in software development,
+                                                algorithms, AI/ML, and modern web technologies.</p>
+                                    </div>
+                              </div>
+
+                              <div class="relative pl-8 pb-8 border-l-2 border-cyan-500/30">
+                                    <div
+                                          class="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-dark">
+                                    </div>
+                                    <div
+                                          class="bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-lg p-6 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:transform hover:-translate-y-1">
+                                          <div class="flex items-center gap-2 mb-2">
+                                                <span
+                                                      class="px-3 py-1 bg-blue-500/20 rounded-full text-xs font-mono text-blue-300">2020</span>
+                                          </div>
+                                          <h4 class="text-xl font-bold text-white mb-1">HSC in Science</h4>
+                                          <p class="text-blue-400 text-sm mb-2">Shahid A.H.M. Kamaruzzaman Govt. Degree
+                                                College</p>
+                                          <div
+                                                class="inline-block px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-xs font-mono">
+                                                GPA: 4.58/5.00
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="relative pl-8">
+                                    <div
+                                          class="absolute -left-2 top-0 w-4 h-4 bg-purple-500 rounded-full border-4 border-dark">
+                                    </div>
+                                    <div
+                                          class="bg-gradient-to-br from-purple-500/10 to-pink-600/10 rounded-lg p-6 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:-translate-y-1">
+                                          <div class="flex items-center gap-2 mb-2">
+                                                <span
+                                                      class="px-3 py-1 bg-purple-500/20 rounded-full text-xs font-mono text-purple-300">2018</span>
+                                          </div>
+                                          <h4 class="text-xl font-bold text-white mb-1">SSC in Science</h4>
+                                          <p class="text-purple-400 text-sm mb-2">Rajshahi Education Board Model School
+                                          </p>
+                                          <div
+                                                class="inline-block px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-xs font-mono">
+                                                GPA: 4.73/5.00
+                                          </div>
                                     </div>
                               </div>
                         </div>
@@ -128,269 +473,940 @@
             </div>
       </section>
 
-      <!-- Education Section -->
-      <section id="education" class="education">
-            <div class="container">
-                  <h2 class="section-title">Education</h2>
-                  <div class="education-timeline">
-                        <div class="education-item">
-                              <div class="education-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                        <span class="text-cyan-400 font-mono text-sm">&lt;experience&gt;</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                              <span
+                                    class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Voluntary
+                                    Experience</span>
+                        </h2>
+                        <span class="text-cyan-400 font-mono text-sm">&lt;/experience&gt;</span>
+                        <p class="text-gray-400 mt-4 font-mono">Professional journey & contributions</p>
+                  </div>
+
+                  <div class="max-w-4xl mx-auto">
+                        <div
+                              class="relative pl-8 pb-8 border-l-2 border-gradient-to-b from-cyan-500/50 to-purple-500/30">
+                              <div
+                                    class="absolute -left-3 top-0 w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full border-4 border-dark shadow-lg shadow-cyan-500/50 animate-pulse-slow">
                               </div>
-                              <div class="education-content">
-                                    <div class="education-year">Summer 2021 – 2025</div>
-                                    <h3>B.Sc. in Computer Science and Engineering</h3>
-                                    <h4>Varendra University, Rajshahi</h4>
-                                    <div class="education-grade">CGPA: 3.28/4.00</div>
-                                    <p>Specialized in software development, algorithms, and data structures. Gained
-                                          comprehensive knowledge in programming languages, database management, and web
-                                          technologies.</p>
+                              <div
+                                    class="bg-gradient-to-br from-cyan-500/10 to-purple-600/10 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-1">
+                                    <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                          <div>
+                                                <h3 class="text-2xl font-bold text-white mb-2">Branding and Promotion
+                                                </h3>
+                                                <p class="text-cyan-400 text-lg font-mono mb-1">Hult Prize at Varendra
+                                                      University</p>
+                                                <p class="text-gray-500 text-sm font-mono flex items-center gap-2">
+                                                      <i class="fas fa-map-marker-alt text-cyan-500"></i> Rajshahi,
+                                                      Bangladesh
+                                                </p>
+                                          </div>
+                                          <div
+                                                class="px-4 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/50 rounded-full">
+                                                <span class="text-cyan-300 font-mono text-sm flex items-center gap-2">
+                                                      <i class="fas fa-calendar-alt"></i>
+                                                      Oct 2022 - 2023
+                                                </span>
+                                          </div>
+                                    </div>
+
+                                    <div class="space-y-3 mt-6">
+                                          <div class="flex items-start gap-3">
+                                                <span
+                                                      class="text-cyan-400 font-mono text-lg mt-1 flex-shrink-0">▹</span>
+                                                <p class="text-gray-400 leading-relaxed">
+                                                      Coordinated digital marketing efforts, <span
+                                                            class="text-white font-semibold">increasing event reach and
+                                                            participation by 40%</span> through strategic campaigns
+                                                </p>
+                                          </div>
+                                          <div class="flex items-start gap-3">
+                                                <span
+                                                      class="text-cyan-400 font-mono text-lg mt-1 flex-shrink-0">▹</span>
+                                                <p class="text-gray-400 leading-relaxed">
+                                                      Designed promotional materials using <span
+                                                            class="text-purple-400 font-semibold">Adobe Illustrator and
+                                                            Photoshop</span> for university-wide entrepreneurship events
+                                                </p>
+                                          </div>
+                                          <div class="flex items-start gap-3">
+                                                <span
+                                                      class="text-cyan-400 font-mono text-lg mt-1 flex-shrink-0">▹</span>
+                                                <p class="text-gray-400 leading-relaxed">
+                                                      Worked in cross-functional teams of 10+ members to achieve event
+                                                      objectives and deliver successful outcomes
+                                                </p>
+                                          </div>
+                                          <div class="flex items-start gap-3">
+                                                <span
+                                                      class="text-cyan-400 font-mono text-lg mt-1 flex-shrink-0">▹</span>
+                                                <p class="text-gray-400 leading-relaxed">
+                                                      Managed social media campaigns across multiple platforms to
+                                                      promote
+                                                      entrepreneurship initiatives and engage student community
+                                                </p>
+                                          </div>
+                                    </div>
+
+                                    <div class="mt-6 flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Digital
+                                                Marketing</span>
+                                          <span
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">Adobe
+                                                Creative Suite</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">Social
+                                                Media</span>
+                                          <span
+                                                class="px-3 py-1 bg-pink-600/20 border border-pink-500/40 rounded-md text-xs font-mono text-pink-300">Team
+                                                Leadership</span>
+                                    </div>
                               </div>
                         </div>
+                  </div>
+            </div>
+      </section>
 
-                        <div class="education-item">
-                              <div class="education-icon">
-                                    <i class="fas fa-school"></i>
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 relative grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                        <span class="text-cyan-400 font-mono text-sm">&lt;skills&gt;</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                              <span
+                                    class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Tech
+                                    Stack & Skills</span>
+                        </h2>
+                        <span class="text-cyan-400 font-mono text-sm">&lt;/skills&gt;</span>
+                        <p class="text-gray-400 mt-4 font-mono">Technologies I work with</p>
+                  </div>
+
+                  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <!-- Skill Card: Python -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fab fa-python text-3xl"></i>
                               </div>
-                              <div class="education-content">
-                                    <div class="education-year">2020</div>
-                                    <h3>Higher Secondary Certificate (HSC) in Science</h3>
-                                    <h4>Shahid A.H.M. Kamaruzzaman Govt. Degree College, Rajshahi</h4>
-                                    <div class="education-grade">GPA: 4.53/5.00</div>
-                                    <p>Focused on Science subjects with emphasis on Mathematics, Physics, and Chemistry,
-                                          building a strong foundation for computer science studies.</p>
-                              </div>
+                              <h4 class="font-bold text-white mb-2">Python</h4>
+                              <p class="text-xs text-gray-400 font-mono">Advanced</p>
                         </div>
 
-                        <div class="education-item">
-                              <div class="education-icon">
-                                    <i class="fas fa-book"></i>
+                        <!-- Skill Card: JavaScript -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-yellow-500/10 to-orange-600/10 backdrop-blur-sm rounded-xl p-6 border border-yellow-500/20 hover:border-yellow-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fab fa-js text-3xl"></i>
                               </div>
-                              <div class="education-content">
-                                    <div class="education-year">2018</div>
-                                    <h3>Secondary School Certificate (SSC) in Science</h3>
-                                    <h4>Rajshahi Education Board Model School and College, Rajshahi</h4>
-                                    <div class="education-grade">GPA: 4.73/5.00</div>
-                                    <p>Completed secondary education with excellent academic performance in Science
-                                          stream, demonstrating strong analytical and problem-solving abilities.</p>
+                              <h4 class="font-bold text-white mb-2">JavaScript</h4>
+                              <p class="text-xs text-gray-400 font-mono">Advanced</p>
+                        </div>
+
+                        <!-- Skill Card: Django -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm rounded-xl p-6 border border-green-500/20 hover:border-green-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fas fa-server text-3xl"></i>
                               </div>
+                              <h4 class="font-bold text-white mb-2">Django</h4>
+                              <p class="text-xs text-gray-400 font-mono">Intermediate</p>
+                        </div>
+
+                        <!-- Skill Card: Java -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-red-500/10 to-orange-600/10 backdrop-blur-sm rounded-xl p-6 border border-red-500/20 hover:border-red-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fab fa-java text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">Java</h4>
+                              <p class="text-xs text-gray-400 font-mono">Intermediate</p>
+                        </div>
+
+                        <!-- Skill Card: C++ -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-blue-500/10 to-indigo-600/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20 hover:border-blue-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fas fa-code text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">C++</h4>
+                              <p class="text-xs text-gray-400 font-mono">Intermediate</p>
+                        </div>
+
+                        <!-- Skill Card: TensorFlow -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-orange-500/10 to-yellow-600/10 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20 hover:border-orange-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fas fa-brain text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">TensorFlow</h4>
+                              <p class="text-xs text-gray-400 font-mono">ML/AI</p>
+                        </div>
+
+                        <!-- Skill Card: HTML5 -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-red-500/10 to-pink-600/10 backdrop-blur-sm rounded-xl p-6 border border-red-500/20 hover:border-red-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fab fa-html5 text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">HTML5</h4>
+                              <p class="text-xs text-gray-400 font-mono">Expert</p>
+                        </div>
+
+                        <!-- Skill Card: CSS3 -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-blue-500/10 to-cyan-600/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20 hover:border-blue-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fab fa-css3-alt text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">CSS3</h4>
+                              <p class="text-xs text-gray-400 font-mono">Expert</p>
+                        </div>
+
+                        <!-- Skill Card: Git -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-gray-500/10 to-slate-600/10 backdrop-blur-sm rounded-xl p-6 border border-gray-500/20 hover:border-gray-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-gray-500 to-slate-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fab fa-git-alt text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">Git</h4>
+                              <p class="text-xs text-gray-400 font-mono">Version Control</p>
+                        </div>
+
+                        <!-- Skill Card: Cloud -->
+                        <div
+                              class="tech-card group bg-gradient-to-br from-purple-500/10 to-indigo-600/10 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-400 transition-all duration-300 text-center">
+                              <div
+                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fas fa-cloud text-3xl"></i>
+                              </div>
+                              <h4 class="font-bold text-white mb-2">Cloud</h4>
+                              <p class="text-xs text-gray-400 font-mono">AWS/Azure</p>
+                        </div>
+                  </div>
+
+                  <!-- Additional Skills Tags -->
+                  <div class="mt-12 text-center">
+                        <p class="text-gray-400 font-mono mb-6">// Additional Technologies</p>
+                        <div class="flex flex-wrap gap-3 justify-center">
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">NumPy</span>
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Pandas</span>
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Scikit-Learn</span>
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Matplotlib</span>
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">REST
+                                    APIs</span>
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">UI/UX
+                                    Design</span>
+                              <span
+                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Arduino/IoT</span>
                         </div>
                   </div>
             </div>
       </section>
 
       <!-- Projects Section -->
-      <section id="projects" class="projects">
-            <div class="container">
-                  <h2 class="section-title">My Projects</h2>
-                  <div class="projects-grid">
-                        <div class="project-card">
-                              <div class="project-image">
-                                    <img src="./image/projects/eventapp.png" alt="Event App">
-                                    <div class="project-overlay">
-                                          <div class="project-links">
-                                                <a href="https://event-web-backend-1.onrender.com" target="_blank"
-                                                      class="project-link" title="Live Demo"><i
-                                                            class="fas fa-external-link-alt"></i></a>
-                                                <a href="https://github.com/shakhaoyat" target="_blank"
-                                                      class="project-link" title="GitHub Profile"><i
-                                                            class="fab fa-github"></i></a>
-                                          </div>
+      <section id="projects" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                        <span class="text-cyan-400 font-mono text-sm">&lt;projects&gt;</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                              <span class="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Featured
+                                    Projects</span>
+                        </h2>
+                        <span class="text-cyan-400 font-mono text-sm">&lt;/projects&gt;</span>
+                        <p class="text-gray-400 mt-4 font-mono">Some things I've built</p>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div
+                              class="group bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/eventapp.png" alt="Event App"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                                          <a href="https://event-web-backend-1.onrender.com" target="_blank"
+                                                class="w-14 h-14 bg-cyan-500 rounded-lg flex items-center justify-center hover:bg-cyan-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fas fa-external-link-alt text-xl"></i>
+                                          </a>
+                                          <a href="https://github.com/shakhaoyat" target="_blank"
+                                                class="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center hover:bg-purple-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fab fa-github text-xl"></i>
+                                          </a>
+                                    </div>
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-cyan-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          Full Stack
                                     </div>
                               </div>
-                              <div class="project-info">
-                                    <h3>Event Management Web App</h3>
-                                    <p>Developed full-stack responsive web application with Django backend and RESTful
-                                          APIs. Implemented SMTP email notification system for automated user
-                                          communications.</p>
-                                    <div class="project-tags">
-                                          <span class="tag">Django</span>
-                                          <span class="tag">JavaScript</span>
-                                          <span class="tag">REST APIs</span>
-                                          <span class="tag">CSS Grid</span>
+                              <div class="p-6">
+                                    <h3
+                                          class="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300 font-mono">
+                                          Event Management App
+                                    </h3>
+                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+                                          <span class="text-cyan-400 font-mono">// </span>Full-stack responsive web
+                                          application with Django backend, RESTful APIs, and automated SMTP email
+                                          notification system.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Django</span>
+                                          <span
+                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
+                                          <span
+                                                class="px-3 py-1 bg-green-600/20 border border-green-500/40 rounded-md text-xs font-mono text-green-300">REST
+                                                API</span>
+                                          <span
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">CSS
+                                                Grid</span>
                                     </div>
                               </div>
                         </div>
 
-                        <div class="project-card">
-                              <div class="project-image">
-                                    <img src="./image/projects/protfolio project.jpeg" alt="Portfolio Project">
-                                    <div class="project-overlay">
-                                          <div class="project-links">
-                                                <a href="https://shakhaoyat.github.io/PORTFOLIO/" target="_blank"
-                                                      class="project-link" title="Live Demo"><i
-                                                            class="fas fa-external-link-alt"></i></a>
-                                                <a href="https://github.com/shakhaoyat" target="_blank"
-                                                      class="project-link" title="GitHub Profile"><i
-                                                            class="fab fa-github"></i></a>
-                                          </div>
+                        <!-- Project 2 -->
+                        <div
+                              class="group bg-gradient-to-br from-purple-500/10 to-pink-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/protfolio project.jpeg" alt="Portfolio Project"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                                          <a href="https://shakhaoyat.github.io/PORTFOLIO/" target="_blank"
+                                                class="w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center hover:bg-purple-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fas fa-external-link-alt text-xl"></i>
+                                          </a>
+                                          <a href="https://github.com/shakhaoyat" target="_blank"
+                                                class="w-14 h-14 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fab fa-github text-xl"></i>
+                                          </a>
+                                    </div>
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-purple-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          Frontend
                                     </div>
                               </div>
-                              <div class="project-info">
-                                    <h3>Personal Portfolio Website</h3>
-                                    <p>Created responsive portfolio showcasing projects with modern web design
-                                          principles. Features dark theme, smooth animations, and mobile-first design
-                                          approach.</p>
-                                    <div class="project-tags">
-                                          <span class="tag">HTML5</span>
-                                          <span class="tag">CSS3</span>
-                                          <span class="tag">JavaScript</span>
-                                          <span class="tag">Flexbox</span>
+                              <div class="p-6">
+                                    <h3
+                                          class="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300 font-mono">
+                                          Portfolio Website
+                                    </h3>
+                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+                                          <span class="text-purple-400 font-mono">// </span>Responsive portfolio with
+                                          modern design principles, dark theme, smooth animations, and mobile-first
+                                          approach.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
+                                          <span
+                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
+                                          <span
+                                                class="px-3 py-1 bg-indigo-600/20 border border-indigo-500/40 rounded-md text-xs font-mono text-indigo-300">Flexbox</span>
                                     </div>
                               </div>
                         </div>
 
-                        <div class="project-card">
-                              <div class="project-image">
+                        <!-- Project 3 -->
+                        <div
+                              class="group bg-gradient-to-br from-orange-500/10 to-red-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-orange-500/20 hover:border-orange-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
                                     <img src="./image/projects/IoT-based Fire Safety Alert System.jpg"
-                                          alt="IoT Fire Safety System">
-                                    <div class="project-overlay">
-                                          <div class="project-links">
-                                                <a href="https://www.linkedin.com/posts/shakhaoyat12_microcontrollerlab-iot-firesafety-activity-7270433675081580545-eIjt"
-                                                      target="_blank" class="project-link" title="Demo Video"><i
-                                                            class="fas fa-external-link-alt"></i></a>
-                                                <a href="https://github.com/shakhaoyat" target="_blank"
-                                                      class="project-link" title="GitHub Profile"><i
-                                                            class="fab fa-github"></i></a>
-                                          </div>
+                                          alt="IoT Fire Safety System"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                                          <a href="https://www.linkedin.com/posts/shakhaoyat12_microcontrollerlab-iot-firesafety-activity-7270433675081580545-eIjt"
+                                                target="_blank"
+                                                class="w-14 h-14 bg-orange-500 rounded-lg flex items-center justify-center hover:bg-orange-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fas fa-external-link-alt text-xl"></i>
+                                          </a>
+                                          <a href="https://github.com/shakhaoyat" target="_blank"
+                                                class="w-14 h-14 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fab fa-github text-xl"></i>
+                                          </a>
+                                    </div>
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-orange-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          IoT
                                     </div>
                               </div>
-                              <div class="project-info">
-                                    <h3>IoT-based Fire Safety Alert System</h3>
-                                    <p>Designed real-time fire detection system with GSM alerts and buzzer
-                                          notifications. Optimized voltage regulation for reliable sensor performance
-                                          using Arduino Uno.</p>
-                                    <div class="project-tags">
-                                          <span class="tag">Arduino Uno</span>
-                                          <span class="tag">GSM Module</span>
-                                          <span class="tag">C++</span>
-                                          <span class="tag">IoT</span>
+                              <div class="p-6">
+                                    <h3
+                                          class="text-2xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 font-mono">
+                                          Fire Safety System
+                                    </h3>
+                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+                                          <span class="text-orange-400 font-mono">// </span>Real-time fire detection
+                                          with GSM alerts and buzzer notifications. Optimized voltage regulation for
+                                          Arduino Uno.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">Arduino
+                                                Uno</span>
+                                          <span
+                                                class="px-3 py-1 bg-green-600/20 border border-green-500/40 rounded-md text-xs font-mono text-green-300">GSM
+                                                Module</span>
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">C++</span>
+                                          <span
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">IoT</span>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- Project 4: Job Application Tracker -->
+                        <div
+                              class="group bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-green-500/20 hover:border-green-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/Job Application Tracker.png"
+                                          alt="Job Application Tracker"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                                          <a href="https://shakhaoyat.github.io/Job-Application-Tracker/"
+                                                target="_blank"
+                                                class="w-14 h-14 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fas fa-external-link-alt text-xl"></i>
+                                          </a>
+                                          <a href="https://github.com/shakhaoyat/Job-Application-Tracker"
+                                                target="_blank"
+                                                class="w-14 h-14 bg-emerald-600 rounded-lg flex items-center justify-center hover:bg-emerald-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fab fa-github text-xl"></i>
+                                          </a>
+                                    </div>
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-green-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          Frontend
+                                    </div>
+                              </div>
+                              <div class="p-6">
+                                    <h3
+                                          class="text-2xl font-bold mb-3 text-white group-hover:text-green-400 transition-colors duration-300 font-mono">
+                                          Job Application Tracker
+                                    </h3>
+                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+                                          <span class="text-green-400 font-mono">// </span>Interactive job tracking
+                                          dashboard with real-time statistics and dynamic filtering by status. Fully
+                                          responsive UI built with modern frameworks.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
+                                          <span
+                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Tailwind</span>
+                                          <span
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">DaisyUI</span>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- Project 5: Payoo Mobile Banking -->
+                        <div
+                              class="group bg-gradient-to-br from-indigo-500/10 to-violet-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-indigo-500/20 hover:border-indigo-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/Payoo Mobile Banking.png" alt="Payoo Mobile Banking"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                                          <a href="https://shakhaoyat.github.io/payoo/" target="_blank"
+                                                class="w-14 h-14 bg-indigo-500 rounded-lg flex items-center justify-center hover:bg-indigo-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fas fa-external-link-alt text-xl"></i>
+                                          </a>
+                                          <a href="https://github.com/shakhaoyat/payoo" target="_blank"
+                                                class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center hover:bg-violet-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fab fa-github text-xl"></i>
+                                          </a>
+                                    </div>
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-indigo-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          FinTech
+                                    </div>
+                              </div>
+                              <div class="p-6">
+                                    <h3
+                                          class="text-2xl font-bold mb-3 text-white group-hover:text-indigo-400 transition-colors duration-300 font-mono">
+                                          Payoo Mobile Banking
+                                    </h3>
+                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+                                          <span class="text-indigo-400 font-mono">// </span>Responsive mobile banking
+                                          app with secure PIN authentication, financial features including add money,
+                                          cashout, send money, and transaction history.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
+                                          <span
+                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Tailwind</span>
+                                          <span
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">DaisyUI</span>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- Project 6: TechWave Podcast -->
+                        <div
+                              class="group bg-gradient-to-br from-teal-500/10 to-cyan-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-teal-500/20 hover:border-teal-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/TechWave Podcast.png" alt="TechWave Podcast"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                                          <a href="https://shakhaoyat.github.io/TechWave/" target="_blank"
+                                                class="w-14 h-14 bg-teal-500 rounded-lg flex items-center justify-center hover:bg-teal-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fas fa-external-link-alt text-xl"></i>
+                                          </a>
+                                          <a href="https://github.com/shakhaoyat/TechWave" target="_blank"
+                                                class="w-14 h-14 bg-cyan-600 rounded-lg flex items-center justify-center hover:bg-cyan-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                                                <i class="fab fa-github text-xl"></i>
+                                          </a>
+                                    </div>
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-teal-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          Media
+                                    </div>
+                              </div>
+                              <div class="p-6">
+                                    <h3
+                                          class="text-2xl font-bold mb-3 text-white group-hover:text-teal-400 transition-colors duration-300 font-mono">
+                                          TechWave Podcast
+                                    </h3>
+                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
+                                          <span class="text-teal-400 font-mono">// </span>Fully responsive podcast
+                                          website optimized for all devices. Modern UI layout with Flexbox and Grid,
+                                          featuring embedded multimedia content.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
+                                          <span
+                                                class="px-3 py-1 bg-green-600/20 border border-green-500/40 rounded-md text-xs font-mono text-green-300">Flexbox</span>
+                                          <span
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">Grid</span>
                                     </div>
                               </div>
                         </div>
                   </div>
+
+                  <!-- View More Projects Button -->
+                  <div class="text-center mt-12">
+                        <a href="https://github.com/shakhaoyat" target="_blank"
+                              class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-600/20 to-purple-600/20 border-2 border-cyan-500/50 rounded-lg hover:bg-gradient-to-r hover:from-cyan-600/30 hover:to-purple-600/30 hover:border-cyan-400 transition-all duration-300 font-mono font-semibold group">
+                              <i class="fab fa-github text-xl"></i>
+                              View More on GitHub
+                              <i
+                                    class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                  </div>
             </div>
       </section>
 
-      <!-- Certificates Section -->
-      <section id="certificates" class="certificates">
-            <div class="container">
-                  <h2 class="section-title">Certificates</h2>
-                  <div class="certificates-grid">
-                        <div class="certificate-card">
-                              <img src="./image/certificates/Machine Learning Training.jpg"
-                                    alt="Machine Learning Training Certificate">
-                              <h3>Machine Learning Training Program</h3>
-                              <p class="certificate-issuer">RUET IoT CLUB • Oct 2025</p>
+      <!--  tificates Section -->
+      <section id="certificates" class="py-20 relative grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                        <span class="text-cyan-400 font-mono text-sm">&lt;certificates&gt;</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                              <span
+                                    class="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Certifications</span>
+                        </h2>
+                        <span class="text-cyan-400 font-mono text-sm">&lt;/certificates&gt;</span>
+                        <p class="text-gray-400 mt-4 font-mono">Professional achievements & learning milestones</p>
+                  </div>
+
+                  <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div
+                              class="group bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/Machine Learning Training.jpg"
+                                          alt="Machine Learning Training Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-cyan-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-cyan-300">Oct 2025</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
+                                          Machine Learning Training Program</h3>
+                                    <p class="text-xs text-gray-400 font-mono">RUET IoT CLUB</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/UIUX Design.jpg" alt="UI/UX Design Certificate">
-                              <h3>UI/UX Design - From Fundamentals to Prototyping</h3>
-                              <p class="certificate-issuer">Business Automation Ltd • Sep 2025</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-purple-500/10 to-pink-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/UIUX Design.jpg" alt="UI/UX Design Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-purple-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-purple-300">Sep 2025</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-purple-400 transition-colors">
+                                          UI/UX Design - Fundamentals to Prototyping</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Business Automation Ltd</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/hp.jpeg" alt="AI for Beginners Certificate">
-                              <h3>AI for Beginners</h3>
-                              <p class="certificate-issuer">HP • Feb 2025</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-blue-500/10 to-cyan-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/hp.jpeg" alt="AI for Beginners Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-blue-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-blue-300">Feb 2025</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-blue-400 transition-colors">
+                                          AI for Beginners</h3>
+                                    <p class="text-xs text-gray-400 font-mono">HP</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/Regular Expressions in Python.jpeg"
-                                    alt="Regular Expressions Certificate">
-                              <h3>Regular Expressions in Python</h3>
-                              <p class="certificate-issuer">Coursera • Sep 2024</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-cyan-500/10 to-teal-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/Web Development (HTML, CSS, JavaScript).jpg"
+                                          alt="IBM Web Development Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-cyan-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-cyan-300">May 2025</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
+                                          Web Development (HTML, CSS, JavaScript)</h3>
+                                    <p class="text-xs text-gray-400 font-mono">IBM - Coursera</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/Python and Django Framework with HTML5.jpeg"
-                                    alt="Python Django Certificate">
-                              <h3>Python and Django Framework</h3>
-                              <p class="certificate-issuer">Udemy • Feb 2024</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-green-500/20 hover:border-green-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/Regular Expressions in Python.jpeg"
+                                          alt="Regular Expressions Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-green-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-green-300">Sep 2024</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-green-400 transition-colors">
+                                          Regular Expressions in Python</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Coursera</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/Java Programming.jpeg" alt="Java Programming Certificate">
-                              <h3>Java Programming</h3>
-                              <p class="certificate-issuer">Great Learning • May 2022</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/Python and Django Framework with HTML5.jpeg"
+                                          alt="Python Django Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-cyan-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-cyan-300">Feb 2024</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
+                                          Python and Django Framework</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Udemy</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/C++ Programming.png" alt="C++ Programming Certificate">
-                              <h3>C++</h3>
-                              <p class="certificate-issuer">Sololearn • Apr 2022</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-red-500/10 to-orange-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-red-500/20 hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/Java Programming.jpeg"
+                                          alt="Java Programming Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-red-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-red-300">May 2022</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-red-400 transition-colors">
+                                          Java Programming</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Great Learning</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/CSS Crash Course for Beginners.jpeg"
-                                    alt="CSS Crash Course Certificate">
-                              <h3>CSS Crash Course For Beginners</h3>
-                              <p class="certificate-issuer">Udemy</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-blue-500/10 to-indigo-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/C++ Programming.png"
+                                          alt="C++ Programming Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-blue-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-blue-300">Apr 2022</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-blue-400 transition-colors">
+                                          C++ Programming</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Sololearn</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/HTML & CSS for Beginners.jpeg"
-                                    alt="HTML & CSS for Beginners Certificate">
-                              <h3>HTML & CSS - Certification Course for Beginners</h3>
-                              <p class="certificate-issuer">Udemy</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-pink-500/10 to-purple-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-pink-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/CSS Crash Course for Beginners.jpeg"
+                                          alt="CSS Crash Course Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-pink-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-pink-300">Udemy</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-pink-400 transition-colors">
+                                          CSS Crash Course For Beginners</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Udemy</p>
+                              </div>
                         </div>
-                        <div class="certificate-card">
-                              <img src="./image/certificates/Introduction to Cloud Computing.jpeg"
-                                    alt="Cloud Computing Certificate">
-                              <h3>Introduction to Cloud Computing</h3>
-                              <p class="certificate-issuer">IBM</p>
+
+                        <div
+                              class="group bg-gradient-to-br from-orange-500/10 to-red-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/HTML & CSS for Beginners.jpeg"
+                                          alt="HTML & CSS for Beginners Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-orange-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-orange-300">Udemy</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-orange-400 transition-colors">
+                                          HTML & CSS - Course for Beginners</h3>
+                                    <p class="text-xs text-gray-400 font-mono">Udemy</p>
+                              </div>
+                        </div>
+
+                        <div
+                              class="group bg-gradient-to-br from-indigo-500/10 to-purple-600/10 backdrop-blur-sm rounded-xl overflow-hidden border border-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/20 hover:-translate-y-2 cursor-pointer">
+                              <div class="aspect-[4/3] overflow-hidden relative">
+                                    <img src="./image/certificates/Introduction to Cloud Computing.jpeg"
+                                          alt="Cloud Computing Certificate"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60">
+                                    </div>
+                              </div>
+                              <div class="p-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                          <i class="fas fa-certificate text-indigo-400 text-xs"></i>
+                                          <span class="text-xs font-mono text-indigo-300">IBM</span>
+                                    </div>
+                                    <h3
+                                          class="text-sm font-bold mb-2 text-white line-clamp-2 group-hover:text-indigo-400 transition-colors">
+                                          Introduction to Cloud Computing</h3>
+                                    <p class="text-xs text-gray-400 font-mono">IBM</p>
+                              </div>
                         </div>
                   </div>
             </div>
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="contact">
-            <div class="container">
-                  <h2 class="section-title">Get In Touch</h2>
-                  <div class="contact-content">
-                        <div class="contact-info">
-                              <h3>Let's Connect</h3>
-                              <p>I'm always interested in hearing about new opportunities and exciting projects. Feel
-                                    free to reach out!</p>
+      <section id="contact" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                        <span class="text-cyan-400 font-mono text-sm">&lt;contact&gt;</span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                              <span class="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Get
+                                    In Touch</span>
+                        </h2>
+                        <span class="text-cyan-400 font-mono text-sm">&lt;/contact&gt;</span>
+                        <p class="text-gray-400 mt-4 font-mono">// Let's build something amazing together</p>
+                  </div>
 
-                              <div class="contact-items">
-                                    <div class="contact-item">
-                                          <i class="fas fa-envelope"></i>
-                                          <div>
-                                                <h4>Email</h4>
-                                                <a
-                                                      href="mailto:shakhaoyathossain.12@gmail.com">shakhaoyathossain.12@gmail.com</a>
+                  <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Contact Info -->
+                        <div class="space-y-6">
+                              <div class="code-block p-6 rounded-xl backdrop-blur-sm border border-cyan-500/30">
+                                    <h3 class="text-2xl font-bold mb-4 text-white font-mono">
+                                          <span class="text-cyan-400">const</span> contactInfo <span
+                                                class="text-cyan-400">=</span> {'{'}
+                                    </h3>
+                                    <div class="pl-6 space-y-3 font-mono text-sm">
+                                          <div class="flex items-center gap-2">
+                                                <span class="text-purple-400">name:</span>
+                                                <span class="text-green-300">"Shakhaoyat Hossain Chad"</span><span
+                                                      class="text-gray-500">,</span>
+                                          </div>
+                                          <div class="flex items-center gap-2">
+                                                <span class="text-purple-400">role:</span>
+                                                <span class="text-green-300">"Full Stack Developer"</span><span
+                                                      class="text-gray-500">,</span>
+                                          </div>
+                                          <div class="flex items-center gap-2">
+                                                <span class="text-purple-400">email:</span>
+                                                <a href="mailto:shakhaoyathossain.12@gmail.com"
+                                                      class="text-cyan-300 hover:text-cyan-200 hover:underline">"shakhaoyathossain.12@gmail.com"</a><span
+                                                      class="text-gray-500">,</span>
+                                          </div>
+                                          <div class="flex items-center gap-2">
+                                                <span class="text-purple-400">location:</span>
+                                                <span class="text-green-300">"Rajshahi, Bangladesh"</span><span
+                                                      class="text-gray-500">,</span>
+                                          </div>
+                                          <div class="flex items-center gap-2">
+                                                <span class="text-purple-400">available:</span>
+                                                <span class="text-yellow-300">true</span>
                                           </div>
                                     </div>
-                                    <div class="contact-item">
-                                          <i class="fab fa-linkedin"></i>
-                                          <div>
-                                                <h4>LinkedIn</h4>
-                                                <a href="https://linkedin.com/in/shakhaoyat12"
-                                                      target="_blank">linkedin.com/in/shakhaoyat12</a>
+                                    <p class="mt-4 font-mono">{'}'}</p>
+                              </div>
+
+                              <div class="grid grid-cols-2 gap-4">
+                                    <a href="https://github.com/shakhaoyat" target="_blank"
+                                          class="group flex items-center gap-3 p-4 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
+                                          <div
+                                                class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                                <i class="fab fa-github text-xl"></i>
                                           </div>
-                                    </div>
-                                    <div class="contact-item">
-                                          <i class="fab fa-github"></i>
                                           <div>
-                                                <h4>GitHub</h4>
-                                                <a href="https://github.com/shakhaoyat"
-                                                      target="_blank">github.com/shakhaoyat</a>
+                                                <p class="text-xs text-gray-400 font-mono">GitHub</p>
+                                                <p class="text-sm font-bold text-cyan-400 group-hover:text-cyan-300">
+                                                      @shakhaoyat</p>
                                           </div>
-                                    </div>
+                                    </a>
+
+                                    <a href="https://linkedin.com/in/shakhaoyat12" target="_blank"
+                                          class="group flex items-center gap-3 p-4 bg-gradient-to-br from-blue-500/10 to-purple-600/10 backdrop-blur-sm rounded-xl border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1">
+                                          <div
+                                                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                                <i class="fab fa-linkedin text-xl"></i>
+                                          </div>
+                                          <div>
+                                                <p class="text-xs text-gray-400 font-mono">LinkedIn</p>
+                                                <p class="text-sm font-bold text-blue-400 group-hover:text-blue-300">
+                                                      Connect</p>
+                                          </div>
+                                    </a>
                               </div>
                         </div>
 
-                        <div class="contact-form">
-                              <form id="contactForm">
-                                    <div class="form-group">
-                                          <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <!-- Contact Form -->
+                        <div
+                              class="bg-gradient-to-br from-cyan-500/10 to-purple-600/10 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 code-block">
+                              <p class="text-cyan-400 font-mono text-sm mb-6">// Send me a message</p>
+                              <form id="contactForm" class="space-y-4">
+                                    <div>
+                                          <label class="block text-sm font-mono text-gray-400 mb-2">
+                                                <span class="text-purple-400">const</span> name <span
+                                                      class="text-cyan-400">=</span>
+                                          </label>
+                                          <input type="text" id="name" name="name" placeholder="your_name" required
+                                                class="w-full px-4 py-3 bg-dark/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-500 text-white placeholder-gray-600 transition-all font-mono text-sm">
                                     </div>
-                                    <div class="form-group">
-                                          <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                    <div>
+                                          <label class="block text-sm font-mono text-gray-400 mb-2">
+                                                <span class="text-purple-400">const</span> email <span
+                                                      class="text-cyan-400">=</span>
+                                          </label>
+                                          <input type="email" id="email" name="email"
+                                                placeholder="your.email@domain.com" required
+                                                class="w-full px-4 py-3 bg-dark/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-500 text-white placeholder-gray-600 transition-all font-mono text-sm">
                                     </div>
-                                    <div class="form-group">
-                                          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                    <div>
+                                          <label class="block text-sm font-mono text-gray-400 mb-2">
+                                                <span class="text-purple-400">const</span> subject <span
+                                                      class="text-cyan-400">=</span>
+                                          </label>
+                                          <input type="text" id="subject" name="subject" placeholder="project_inquiry"
+                                                required
+                                                class="w-full px-4 py-3 bg-dark/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-500 text-white placeholder-gray-600 transition-all font-mono text-sm">
                                     </div>
-                                    <div class="form-group">
-                                          <textarea id="message" name="message" placeholder="Your Message" rows="5"
-                                                required></textarea>
+                                    <div>
+                                          <label class="block text-sm font-mono text-gray-400 mb-2">
+                                                <span class="text-purple-400">const</span> message <span
+                                                      class="text-cyan-400">=</span>
+                                          </label>
+                                          <textarea id="message" name="message" placeholder="Write your message here..."
+                                                rows="4" required
+                                                class="w-full px-4 py-3 bg-dark/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-500 text-white placeholder-gray-600 transition-all resize-none font-mono text-sm"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                    <button type="submit"
+                                          class="group w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg hover:from-cyan-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 transform hover:-translate-y-1 font-mono font-semibold flex items-center justify-center gap-2">
+                                          <span>sendMessage()</span>
+                                          <i
+                                                class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                                    </button>
                               </form>
                         </div>
                   </div>
@@ -398,15 +1414,31 @@
       </section>
 
       <!-- Footer -->
-      <footer class="footer">
-            <div class="container">
-                  <div class="footer-content">
-                        <p>&copy; 2025 Shakhaoyat Hossain. All rights reserved.</p>
-                        <div class="footer-social">
-                              <a href="https://linkedin.com/in/shakhaoyat12" target="_blank"><i
-                                          class="fab fa-linkedin"></i></a>
-                              <a href="https://github.com/shakhaoyat" target="_blank"><i class="fab fa-github"></i></a>
-                              <a href="mailto:shakhaoyathossain.12@gmail.com"><i class="fas fa-envelope"></i></a>
+      <footer class="py-8 border-t border-cyan-500/20 bg-dark/80 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="text-gray-400 font-mono text-sm">
+                              <span class="text-cyan-400">&copy;</span> 2025
+                              <span class="text-white">Shakhaoyat Hossain Chad</span>
+                              <span class="text-gray-600">// Built with ❤️ and ☕</span>
+                        </p>
+                        <div class="flex gap-3">
+                              <a href="https://linkedin.com/in/shakhaoyat12" target="_blank"
+                                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-cyan-600/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                    <i class="fab fa-linkedin text-cyan-400"></i>
+                              </a>
+                              <a href="https://github.com/shakhaoyat" target="_blank"
+                                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-purple-600/10 border border-purple-500/30 hover:bg-purple-500 hover:border-purple-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                    <i class="fab fa-github text-purple-400"></i>
+                              </a>
+                              <a href="mailto:shakhaoyathossain.12@gmail.com"
+                                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-600/10 border border-blue-500/30 hover:bg-blue-500 hover:border-blue-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                    <i class="fas fa-envelope text-blue-400"></i>
+                              </a>
+                              <a href="#" target="_blank"
+                                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-cyan-600/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                    <i class="fab fa-twitter text-cyan-400"></i>
+                              </a>
                         </div>
                   </div>
             </div>
