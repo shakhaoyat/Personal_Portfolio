@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Payoo Mobile Banking | Shakhaoyat Hossain Chad</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+      <script>
+            tailwind.config = {
+                  theme: {
+                        extend: {
+                              colors: { dark: '#0a0e27' },
+                              fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                        }
+                  }
+            }
+      </script>
+      <style>
+            body {
+                  background:
+                        radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 34%),
+                        radial-gradient(circle at top right, rgba(168, 85, 247, 0.14), transparent 30%),
+                        #0a0e27;
+            }
+      </style>
+</head>
+
+<body class="text-gray-100 font-sans">
+      <header class="sticky top-0 z-40 border-b border-indigo-500/20 bg-dark/90 backdrop-blur-xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                  <a href="index.html#projects"
+                        class="flex items-center gap-3 font-mono text-sm text-gray-300 hover:text-indigo-400 transition-colors">
+                        <span
+                              class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-400 to-violet-600 flex items-center justify-center font-bold text-dark">SC</span>
+                        <span>Back to Projects</span>
+                  </a>
+                  <a href="index.html#contact"
+                        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 text-indigo-200 hover:bg-indigo-500/10 transition-colors font-mono text-sm">
+                        Contact
+                  </a>
+            </div>
+      </header>
+
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+            <section class="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+                  <div class="space-y-6">
+                        <div
+                              class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 font-mono text-xs text-indigo-200">
+                              <i class="fas fa-wallet"></i>
+                              FinTech Project Details
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                              <span class="block text-indigo-300 font-mono text-lg md:text-xl mb-3">Payoo Mobile
+                                    Banking</span>
+                              A mobile banking interface focused on clarity, security, and quick transactions.
+                        </h1>
+                        <p class="text-gray-300 text-lg leading-relaxed max-w-2xl">
+                              The project recreates a banking-style user flow with a simple PIN-based entry experience,
+                              action cards, and transaction history designed for practical everyday use.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                              <a href="https://shakhaoyat.github.io/payoo/" target="_blank"
+                                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-400 text-dark font-semibold hover:bg-indigo-300 transition-colors">
+                                    <i class="fas fa-arrow-up-right-from-square"></i>
+                                    Live Project
+                              </a>
+                              <a href="https://github.com/shakhaoyat/payoo" target="_blank"
+                                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-indigo-500/30 text-indigo-200 hover:bg-indigo-500/10 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                    Client GitHub Repo
+                              </a>
+                        </div>
+                  </div>
+                  <div class="relative">
+                        <div
+                              class="absolute -inset-4 rounded-3xl bg-gradient-to-r from-indigo-500/20 to-violet-600/20 blur-2xl">
+                        </div>
+                        <img src="./image/projects/Payoo Mobile Banking.png" alt="Payoo Mobile Banking preview"
+                              class="relative rounded-3xl shadow-2xl border border-white/10 w-full object-cover">
+                  </div>
+            </section>
+
+            <section class="mt-12 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                  <div class="rounded-2xl border border-indigo-500/20 bg-white/5 p-6 backdrop-blur-sm">
+                        <p class="text-xs uppercase tracking-[0.3em] text-indigo-300 font-mono mb-3">Stack</p>
+                        <p class="text-lg font-semibold">HTML5, CSS3, JavaScript, Tailwind, DaisyUI</p>
+                        <p class="text-gray-400 text-sm mt-2">Built as a client-side banking experience with polished
+                              visual flow.</p>
+                  </div>
+                  <div class="rounded-2xl border border-indigo-500/20 bg-white/5 p-6 backdrop-blur-sm">
+                        <p class="text-xs uppercase tracking-[0.3em] text-indigo-300 font-mono mb-3">Description</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">A responsive demo app that organizes add money,
+                              cash out, and send money interactions in one UI.</p>
+                  </div>
+                  <div class="rounded-2xl border border-indigo-500/20 bg-white/5 p-6 backdrop-blur-sm">
+                        <p class="text-xs uppercase tracking-[0.3em] text-indigo-300 font-mono mb-3">Challenges</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Designing secure-feeling navigation and card
+                              layouts while preserving readability on phone-sized screens.</p>
+                  </div>
+                  <div class="rounded-2xl border border-indigo-500/20 bg-white/5 p-6 backdrop-blur-sm">
+                        <p class="text-xs uppercase tracking-[0.3em] text-indigo-300 font-mono mb-3">Future Plans</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Add authentication flow, persistent transaction
+                              state, and analytics for spending patterns.</p>
+                  </div>
+            </section>
+      </main>
+
+      <footer class="border-t border-indigo-500/20 bg-dark/70 backdrop-blur-xl">
+            <div
+                  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <p class="text-gray-400 font-mono text-sm">Shakhaoyat Hossain Chad | Payoo Case Study</p>
+                  <a href="index.html#projects" class="text-indigo-300 hover:text-indigo-200 text-sm font-mono">Back to
+                        home</a>
+            </div>
+      </footer>
+</body>
+
+</html>

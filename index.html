@@ -68,18 +68,18 @@
       </script>
       <style>
             body {
-                  background: #0a0e27;
+                  background: #080808;
                   background-image:
-                        radial-gradient(at 0% 0%, rgba(0, 245, 255, 0.1) 0px, transparent 50%),
-                        radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.1) 0px, transparent 50%),
-                        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
-                        radial-gradient(at 0% 100%, rgba(147, 51, 234, 0.1) 0px, transparent 50%);
+                        radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.08) 0px, transparent 48%),
+                        radial-gradient(at 100% 0%, rgba(148, 163, 184, 0.08) 0px, transparent 45%),
+                        radial-gradient(at 100% 100%, rgba(34, 197, 94, 0.08) 0px, transparent 48%),
+                        radial-gradient(at 0% 100%, rgba(255, 255, 255, 0.04) 0px, transparent 45%);
             }
 
             .grid-bg {
                   background-image:
-                        linear-gradient(to right, rgba(0, 245, 255, 0.05) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+                        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
                   background-size: 40px 40px;
             }
 
@@ -118,72 +118,91 @@
 <body class="text-gray-100 font-sans antialiased relative overflow-x-hidden">
       <!-- Navigation -->
       <nav
-            class="fixed top-0 w-full bg-dark/90 backdrop-blur-md z-50 border-b border-cyan-500/20 shadow-lg shadow-cyan-500/10">
+            class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/10 shadow-lg shadow-black/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="flex justify-between items-center h-16">
                         <div class="flex-shrink-0 flex items-center gap-2">
                               <div
-                                    class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center font-mono font-bold text-lg">
+                                    class="w-10 h-10 bg-gradient-to-br from-white to-slate-400 rounded-lg flex items-center justify-center font-mono font-bold text-lg text-black">
                                     SC
                               </div>
                               <div class="hidden md:block">
                                     <span class="text-lg font-mono font-bold">
-                                          <span class="text-cyan-400">&lt;</span>
+                                          <span class="text-white">&lt;</span>
                                           <span class="text-white">Shakhaoyat Hossain Chad</span>
-                                          <span class="text-cyan-400">/&gt;</span>
+                                          <span class="text-white">/&gt;</span>
                                     </span>
                               </div>
                         </div>
-                        <ul class="hidden md:flex space-x-1">
-                              <li><a href="#home"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> Home
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                              <li><a href="#about"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> About
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                              <li><a href="#experience"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> Experience
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                              <li><a href="#skills"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> Skills
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                              <li><a href="#projects"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> Projects
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                              <li><a href="#certificates"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> Certificates
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                              <li><a href="#contact"
-                                          class="nav-link px-4 py-2 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group font-mono text-sm">
-                                          <span class="text-cyan-400">//</span> Contact
-                                          <span
-                                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-                                    </a></li>
-                        </ul>
-                        <div class="md:hidden" id="mobile-menu">
-                              <button class="text-cyan-400 hover:text-cyan-300 focus:outline-none">
-                                    <i class="fas fa-bars text-2xl"></i>
-                              </button>
+                        <div class="hidden md:flex items-center space-x-1">
+                              <a href="#home"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> Home
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
+                              <a href="#about"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> About
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
+                              <a href="#experience"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> Experience
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
+                              <a href="#skills"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> Skills
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
+                              <a href="#projects"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> Projects
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
+                              <a href="#certificates"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> Certificates
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
+                              <a href="#contact"
+                                    class="nav-link px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 relative group font-mono text-sm">
+                                    <span class="text-white">//</span> Contact
+                                    <span
+                                          class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-slate-400 group-hover:w-full transition-all duration-300"></span>
+                              </a>
                         </div>
+                        <button id="mobileMenuButton"
+                              class="md:hidden text-white hover:text-gray-300 focus:outline-none"
+                              aria-label="Toggle navigation menu" aria-expanded="false">
+                              <i class="fas fa-bars text-2xl"></i>
+                        </button>
                   </div>
+            </div>
+            <div id="mobileMenuPanel" class="md:hidden hidden border-t border-white/10 bg-black/95 backdrop-blur-md">
+                  <div class="px-4 py-4 space-y-2 max-w-7xl mx-auto">
+                        <a href="#home"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">Home</a>
+                        <a href="#about"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">About</a>
+                        <a href="#experience"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">Experience</a>
+                        <a href="#skills"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">Skills</a>
+                        <a href="#projects"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">Projects</a>
+                        <a href="#certificates"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">Certificates</a>
+                        <a href="#contact"
+                              class="nav-link block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 font-mono text-sm">Contact</a>
+                  </div>
+            </div>
             </div>
       </nav>
 
@@ -191,10 +210,9 @@
       <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden grid-bg">
             <!-- Animated background elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                  <div
-                        class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-slow">
+                  <div class="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse-slow">
                   </div>
-                  <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"
+                  <div class="absolute bottom-20 right-10 w-96 h-96 bg-slate-400/10 rounded-full blur-3xl animate-pulse-slow"
                         style="animation-delay: 1s;"></div>
             </div>
 
@@ -202,7 +220,7 @@
                   <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="space-y-6 animate-slide-up">
                               <!-- Terminal-like code block -->
-                              <div class="code-block p-4 rounded-lg backdrop-blur-sm border border-cyan-500/30 mb-6">
+                              <div class="code-block p-4 rounded-lg backdrop-blur-sm border border-white/20 mb-6">
                                     <div class="flex items-center gap-2 mb-3">
                                           <div class="w-3 h-3 rounded-full bg-red-500"></div>
                                           <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -215,47 +233,49 @@
                                           <div class="text-white">Shakhaoyat Hossain Chad</div>
                                           <div><span class="text-cyan-400">$</span> <span class="text-gray-400">cat
                                                       role.txt</span></div>
-                                          <div class="text-purple-400">Full Stack Developer | Problem Solver</div>
+                                          <div class="text-gray-200">Full Stack Developer | Problem Solver</div>
                                     </div>
                               </div>
 
                               <h1 class="text-4xl md:text-6xl font-bold leading-tight">
                                     <span class="block text-gray-400 text-lg md:text-xl font-mono mb-2">Hi, I'm</span>
                                     <span
-                                          class="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                                          class="block bg-gradient-to-r from-white via-slate-200 to-gray-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                                           Shakhaoyat Hossain
                                     </span>
                                     <span class="block text-2xl md:text-4xl mt-2 font-mono">
-                                          <span class="text-cyan-400">&lt;</span>
+                                          <span class="text-white">&lt;</span>
                                           <span class="text-white">Developer</span>
-                                          <span class="text-cyan-400">/&gt;</span>
+                                          <span class="text-white">/&gt;</span>
                                     </span>
                               </h1>
 
                               <p class="text-lg text-gray-400 leading-relaxed font-mono">
-                                    <span class="text-cyan-400">/*</span> Crafting innovative digital solutions with
-                                    clean code and modern technologies. Passionate about turning ideas into reality
-                                    through software development. <span class="text-cyan-400">*/</span>
+                                    <span class="text-white">/*</span> Full Stack Developer focused on building
+                                    polished interfaces, reliable backend systems, and meaningful digital products.
+                                    I like turning rough ideas into fast, accessible, and practical web experiences.
+                                    <span class="text-white">*/</span>
                               </p>
 
                               <div class="flex flex-wrap gap-4 pt-4">
                                     <a href="#projects"
-                                          class="group relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50 hover:-translate-y-1">
-                                          <span class="relative z-10 flex items-center gap-2 font-mono font-semibold">
+                                          class="group relative px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-1 text-white">
+                                          <span
+                                                class="relative z-10 flex items-center gap-2 font-mono font-semibold text-white">
                                                 <i class="fas fa-code"></i>
                                                 View Projects
                                           </span>
                                           <div
-                                                class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-lime-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                           </div>
                                     </a>
                                     <a href="#contact"
-                                          class="px-6 py-3 border-2 border-cyan-500/50 rounded-lg hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 hover:-translate-y-1 font-mono font-semibold flex items-center gap-2">
+                                          class="px-6 py-3 border-2 border-slate-300/40 rounded-lg hover:bg-white/10 hover:border-slate-100 transition-all duration-300 hover:-translate-y-1 font-mono font-semibold flex items-center gap-2 text-slate-100">
                                           <i class="fas fa-envelope"></i>
                                           Get In Touch
                                     </a>
                                     <a href="./Shakhaoyat%20Hossain%20Chad.pdf" download
-                                          class="px-6 py-3 border-2 border-purple-500/50 rounded-lg hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 hover:-translate-y-1 font-mono font-semibold flex items-center gap-2">
+                                          class="px-6 py-3 border-2 border-emerald-400/45 rounded-lg hover:bg-emerald-400/10 hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1 font-mono font-semibold flex items-center gap-2 text-emerald-200">
                                           <i class="fas fa-download"></i>
                                           Resume
                                     </a>
@@ -263,24 +283,19 @@
 
                               <div class="flex gap-4 pt-4">
                                     <a href="https://linkedin.com/in/shakhaoyat12" target="_blank"
-                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-400/15 hover:bg-emerald-500 hover:border-emerald-300 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
                                           <i
-                                                class="fab fa-linkedin text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                                                class="fab fa-linkedin text-xl text-gray-300 group-hover:text-black transition-colors"></i>
                                     </a>
                                     <a href="https://github.com/shakhaoyat" target="_blank"
-                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-slate-500/10 border border-slate-300/15 hover:bg-white hover:border-white transition-all duration-300 transform hover:scale-110 hover:rotate-6">
                                           <i
-                                                class="fab fa-github text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                                                class="fab fa-github text-xl text-gray-300 group-hover:text-black transition-colors"></i>
                                     </a>
                                     <a href="mailto:shakhaoyathossain.12@gmail.com"
-                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-400/15 hover:bg-emerald-500 hover:border-emerald-300 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
                                           <i
-                                                class="fas fa-envelope text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
-                                    </a>
-                                    <a href="#" target="_blank"
-                                          class="group w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
-                                          <i
-                                                class="fab fa-twitter text-xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                                                class="fas fa-envelope text-xl text-gray-300 group-hover:text-black transition-colors"></i>
                                     </a>
                               </div>
                         </div>
@@ -289,31 +304,31 @@
                               <!-- Hexagon frame with profile -->
                               <div class="relative group">
                                     <div
-                                          class="absolute -inset-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition duration-1000 animate-glow">
+                                          class="absolute -inset-4 bg-gradient-to-r from-white via-slate-400 to-emerald-500 rounded-full blur-2xl opacity-50 group-hover:opacity-90 transition duration-1000 animate-glow">
                                     </div>
                                     <div class="relative">
                                           <div
-                                                class="absolute inset-0 border-4 border-cyan-400/50 rounded-full animate-pulse-slow">
+                                                class="absolute inset-0 border-4 border-white/35 rounded-full animate-pulse-slow">
                                           </div>
-                                          <div class="absolute -inset-2 border-2 border-purple-500/30 rounded-full animate-pulse-slow"
+                                          <div class="absolute -inset-2 border-2 border-emerald-400/25 rounded-full animate-pulse-slow"
                                                 style="animation-delay: 0.5s;"></div>
-                                          <img src="./image/Profile/propic.png" alt="Shakhaoyat Hossain"
-                                                class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-cyan-500/50 shadow-2xl animate-float">
+                                          <img src="./image/Profile/newpropic.jpg" alt="Shakhaoyat Hossain"
+                                                class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/40 shadow-2xl grayscale contrast-110 animate-float">
                                     </div>
                               </div>
 
                               <!-- Floating tech icons -->
-                              <div class="absolute top-10 -right-5 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm rounded-lg border border-cyan-500/30 flex items-center justify-center animate-float"
+                              <div class="absolute top-10 -right-5 w-16 h-16 bg-gradient-to-br from-white/10 to-slate-400/10 backdrop-blur-sm rounded-lg border border-white/15 flex items-center justify-center animate-float"
                                     style="animation-delay: 0.2s;">
-                                    <i class="fab fa-python text-2xl text-cyan-400"></i>
+                                    <i class="fab fa-python text-2xl text-gray-200"></i>
                               </div>
-                              <div class="absolute bottom-10 -left-5 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm rounded-lg border border-purple-500/30 flex items-center justify-center animate-float"
+                              <div class="absolute bottom-10 -left-5 w-16 h-16 bg-gradient-to-br from-white/10 to-slate-400/10 backdrop-blur-sm rounded-lg border border-white/15 flex items-center justify-center animate-float"
                                     style="animation-delay: 0.5s;">
-                                    <i class="fab fa-react text-2xl text-purple-400"></i>
+                                    <i class="fab fa-react text-2xl text-gray-200"></i>
                               </div>
-                              <div class="absolute top-1/2 -right-10 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-600/20 backdrop-blur-sm rounded-lg border border-blue-500/30 flex items-center justify-center animate-float"
+                              <div class="absolute top-1/2 -right-10 w-12 h-12 bg-gradient-to-br from-white/10 to-slate-400/10 backdrop-blur-sm rounded-lg border border-white/15 flex items-center justify-center animate-float"
                                     style="animation-delay: 0.8s;">
-                                    <i class="fab fa-node-js text-xl text-blue-400"></i>
+                                    <i class="fab fa-node-js text-xl text-gray-200"></i>
                               </div>
                         </div>
                   </div>
@@ -343,27 +358,32 @@
                                                 <i class="fas fa-user-tie text-xl"></i>
                                           </div>
                                           <div>
-                                                <h3 class="text-2xl font-bold mb-2 text-white">Professional Background
+                                                <h3 class="text-2xl font-bold mb-2 text-white">My Programming Journey
                                                 </h3>
                                                 <p class="text-gray-400 leading-relaxed">
-                                                      Computer Science graduate passionate about software development
-                                                      with expertise in full-stack web development and emerging
-                                                      technologies.
+                                                      I started by learning the fundamentals of programming and quickly
+                                                      became interested in how code can solve real problems. Over time,
+                                                      I moved into full-stack web development, built projects across the
+                                                      frontend and backend, and kept refining my skills through hands-on
+                                                      practice, coursework, and certifications.
                                                 </p>
                                           </div>
                                     </div>
                                     <div class="space-y-4 text-gray-400 font-mono text-sm">
                                           <div class="flex items-center gap-3">
                                                 <span class="text-cyan-400">▹</span>
-                                                <span>B.Sc. in Computer Science & Engineering</span>
+                                                <span>I enjoy building interfaces that feel fast, clear, and pleasant to
+                                                      use.</span>
                                           </div>
                                           <div class="flex items-center gap-3">
                                                 <span class="text-cyan-400">▹</span>
-                                                <span>Full Stack Development | AI/ML Enthusiast</span>
+                                                <span>I also like backend logic, REST APIs, and solving problems with
+                                                      clean code.</span>
                                           </div>
                                           <div class="flex items-center gap-3">
                                                 <span class="text-cyan-400">▹</span>
-                                                <span>Clean Code Advocate | Problem Solver</span>
+                                                <span>Outside programming, I enjoy photography, cycling, and following
+                                                      football.</span>
                                           </div>
                                     </div>
                               </div>
@@ -376,24 +396,24 @@
                                                 <i class="fas fa-rocket text-xl"></i>
                                           </div>
                                           <div>
-                                                <h3 class="text-2xl font-bold mb-2 text-white">What I Do</h3>
+                                                <h3 class="text-2xl font-bold mb-2 text-white">What I Enjoy Building
+                                                </h3>
                                                 <p class="text-gray-400 leading-relaxed mb-4">
-                                                      I transform ideas into scalable digital solutions using modern
-                                                      technologies. My focus is on writing clean, efficient code and
-                                                      creating exceptional user experiences.
+                                                      I like working on products where design and functionality matter
+                                                      equally: responsive websites, dashboards, project trackers, and
+                                                      practical automation tools. I care about readability, performance,
+                                                      and making the final experience feel intentional.
                                                 </p>
                                                 <div class="flex flex-wrap gap-2">
                                                       <span
-                                                            class="px-3 py-1 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-xs text-cyan-300">Web
-                                                            Development</span>
+                                                            class="px-3 py-1 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-xs text-cyan-300">Frontend</span>
                                                       <span
-                                                            class="px-3 py-1 bg-blue-500/20 border border-blue-500/40 rounded-full text-xs text-blue-300">API
-                                                            Design</span>
+                                                            class="px-3 py-1 bg-blue-500/20 border border-blue-500/40 rounded-full text-xs text-blue-300">Backend</span>
                                                       <span
-                                                            class="px-3 py-1 bg-purple-500/20 border border-purple-500/40 rounded-full text-xs text-purple-300">ML/AI</span>
+                                                            class="px-3 py-1 bg-purple-500/20 border border-purple-500/40 rounded-full text-xs text-purple-300">UI/UX</span>
                                                       <span
-                                                            class="px-3 py-1 bg-pink-500/20 border border-pink-500/40 rounded-full text-xs text-pink-300">IoT
-                                                            Projects</span>
+                                                            class="px-3 py-1 bg-pink-500/20 border border-pink-500/40 rounded-full text-xs text-pink-300">Problem
+                                                            Solving</span>
                                                 </div>
                                           </div>
                                     </div>
@@ -577,149 +597,148 @@
       <section id="skills" class="py-20 relative grid-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="text-center mb-16">
-                        <span class="text-cyan-400 font-mono text-sm">&lt;skills&gt;</span>
+                        <span class="text-white font-mono text-sm">&lt;skills&gt;</span>
                         <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
                               <span
-                                    class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Tech
+                                    class="bg-gradient-to-r from-white via-slate-300 to-emerald-400 bg-clip-text text-transparent">Tech
                                     Stack & Skills</span>
                         </h2>
-                        <span class="text-cyan-400 font-mono text-sm">&lt;/skills&gt;</span>
+                        <span class="text-white font-mono text-sm">&lt;/skills&gt;</span>
                         <p class="text-gray-400 mt-4 font-mono">Technologies I work with</p>
                   </div>
 
-                  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                        <!-- Skill Card: Python -->
+                  <div class="grid lg:grid-cols-3 gap-6">
                         <div
-                              class="tech-card group bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fab fa-python text-3xl"></i>
+                              class="bg-gradient-to-br from-white/10 to-slate-500/10 rounded-2xl border border-white/15 p-6 backdrop-blur-sm">
+                              <div class="flex items-center justify-between mb-5">
+                                    <h3 class="text-2xl font-bold text-white">Frontend</h3>
+                                    <i class="fas fa-palette text-gray-300 text-xl"></i>
                               </div>
-                              <h4 class="font-bold text-white mb-2">Python</h4>
-                              <p class="text-xs text-gray-400 font-mono">Advanced</p>
+                              <div class="space-y-4">
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>HTML5 / CSS3</span><span
+                                                      class="text-gray-300">95%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[95%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>JavaScript</span><span
+                                                      class="text-gray-300">90%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[90%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>Tailwind / Responsive
+                                                      UI</span><span class="text-gray-300">92%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[92%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
                         </div>
 
-                        <!-- Skill Card: JavaScript -->
                         <div
-                              class="tech-card group bg-gradient-to-br from-yellow-500/10 to-orange-600/10 backdrop-blur-sm rounded-xl p-6 border border-yellow-500/20 hover:border-yellow-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fab fa-js text-3xl"></i>
+                              class="bg-gradient-to-br from-white/10 to-slate-500/10 rounded-2xl border border-white/15 p-6 backdrop-blur-sm">
+                              <div class="flex items-center justify-between mb-5">
+                                    <h3 class="text-2xl font-bold text-white">Backend</h3>
+                                    <i class="fas fa-server text-gray-300 text-xl"></i>
                               </div>
-                              <h4 class="font-bold text-white mb-2">JavaScript</h4>
-                              <p class="text-xs text-gray-400 font-mono">Advanced</p>
+                              <div class="space-y-4">
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>Python</span><span
+                                                      class="text-gray-300">90%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[90%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>Django / REST
+                                                      APIs</span><span class="text-gray-300">85%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[85%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>Java / C++</span><span
+                                                      class="text-gray-300">75%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[75%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
                         </div>
 
-                        <!-- Skill Card: Django -->
                         <div
-                              class="tech-card group bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm rounded-xl p-6 border border-green-500/20 hover:border-green-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fas fa-server text-3xl"></i>
+                              class="bg-gradient-to-br from-emerald-500/10 to-slate-600/10 rounded-2xl border border-white/15 p-6 backdrop-blur-sm">
+                              <div class="flex items-center justify-between mb-5">
+                                    <h3 class="text-2xl font-bold text-white">Tools & Practices</h3>
+                                    <i class="fas fa-screwdriver-wrench text-gray-300 text-xl"></i>
                               </div>
-                              <h4 class="font-bold text-white mb-2">Django</h4>
-                              <p class="text-xs text-gray-400 font-mono">Intermediate</p>
-                        </div>
-
-                        <!-- Skill Card: Java -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-red-500/10 to-orange-600/10 backdrop-blur-sm rounded-xl p-6 border border-red-500/20 hover:border-red-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fab fa-java text-3xl"></i>
+                              <div class="space-y-4">
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>Git / GitHub</span><span
+                                                      class="text-gray-300">90%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[90%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>UI/UX Design</span><span
+                                                      class="text-gray-300">78%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[78%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div>
+                                          <div class="flex justify-between text-sm mb-2"><span>Cloud /
+                                                      Deployment</span><span class="text-gray-300">72%</span></div>
+                                          <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                                <div
+                                                      class="h-full w-[72%] bg-gradient-to-r from-white to-slate-400 rounded-full">
+                                                </div>
+                                          </div>
+                                    </div>
                               </div>
-                              <h4 class="font-bold text-white mb-2">Java</h4>
-                              <p class="text-xs text-gray-400 font-mono">Intermediate</p>
-                        </div>
-
-                        <!-- Skill Card: C++ -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-blue-500/10 to-indigo-600/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20 hover:border-blue-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fas fa-code text-3xl"></i>
-                              </div>
-                              <h4 class="font-bold text-white mb-2">C++</h4>
-                              <p class="text-xs text-gray-400 font-mono">Intermediate</p>
-                        </div>
-
-                        <!-- Skill Card: TensorFlow -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-orange-500/10 to-yellow-600/10 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20 hover:border-orange-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fas fa-brain text-3xl"></i>
-                              </div>
-                              <h4 class="font-bold text-white mb-2">TensorFlow</h4>
-                              <p class="text-xs text-gray-400 font-mono">ML/AI</p>
-                        </div>
-
-                        <!-- Skill Card: HTML5 -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-red-500/10 to-pink-600/10 backdrop-blur-sm rounded-xl p-6 border border-red-500/20 hover:border-red-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fab fa-html5 text-3xl"></i>
-                              </div>
-                              <h4 class="font-bold text-white mb-2">HTML5</h4>
-                              <p class="text-xs text-gray-400 font-mono">Expert</p>
-                        </div>
-
-                        <!-- Skill Card: CSS3 -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-blue-500/10 to-cyan-600/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20 hover:border-blue-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fab fa-css3-alt text-3xl"></i>
-                              </div>
-                              <h4 class="font-bold text-white mb-2">CSS3</h4>
-                              <p class="text-xs text-gray-400 font-mono">Expert</p>
-                        </div>
-
-                        <!-- Skill Card: Git -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-gray-500/10 to-slate-600/10 backdrop-blur-sm rounded-xl p-6 border border-gray-500/20 hover:border-gray-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-gray-500 to-slate-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fab fa-git-alt text-3xl"></i>
-                              </div>
-                              <h4 class="font-bold text-white mb-2">Git</h4>
-                              <p class="text-xs text-gray-400 font-mono">Version Control</p>
-                        </div>
-
-                        <!-- Skill Card: Cloud -->
-                        <div
-                              class="tech-card group bg-gradient-to-br from-purple-500/10 to-indigo-600/10 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-400 transition-all duration-300 text-center">
-                              <div
-                                    class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fas fa-cloud text-3xl"></i>
-                              </div>
-                              <h4 class="font-bold text-white mb-2">Cloud</h4>
-                              <p class="text-xs text-gray-400 font-mono">AWS/Azure</p>
                         </div>
                   </div>
 
-                  <!-- Additional Skills Tags -->
-                  <div class="mt-12 text-center">
-                        <p class="text-gray-400 font-mono mb-6">// Additional Technologies</p>
-                        <div class="flex flex-wrap gap-3 justify-center">
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">NumPy</span>
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Pandas</span>
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Scikit-Learn</span>
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Matplotlib</span>
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">REST
-                                    APIs</span>
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">UI/UX
-                                    Design</span>
-                              <span
-                                    class="px-4 py-2 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 rounded-full text-sm hover:from-cyan-600/50 hover:to-blue-600/50 transition-all duration-300 cursor-default hover:scale-105 font-mono">Arduino/IoT</span>
-                        </div>
+                  <div class="mt-12 flex flex-wrap gap-3 justify-center">
+                        <span
+                              class="px-4 py-2 bg-white/10 border border-white/15 rounded-full text-sm text-gray-200 font-mono">NumPy</span>
+                        <span
+                              class="px-4 py-2 bg-white/10 border border-white/15 rounded-full text-sm text-gray-200 font-mono">Pandas</span>
+                        <span
+                              class="px-4 py-2 bg-white/10 border border-white/15 rounded-full text-sm text-gray-200 font-mono">Postman</span>
+                        <span
+                              class="px-4 py-2 bg-white/10 border border-white/15 rounded-full text-sm text-gray-200 font-mono">Figma</span>
+                        <span
+                              class="px-4 py-2 bg-white/10 border border-white/15 rounded-full text-sm text-gray-200 font-mono">SQL
+                              Basics</span>
+                        <span
+                              class="px-4 py-2 bg-white/10 border border-white/15 rounded-full text-sm text-gray-200 font-mono">Problem
+                              Solving</span>
+                        <span
+                              class="px-4 py-2 bg-emerald-500/10 border border-emerald-400/20 rounded-full text-sm text-emerald-200 font-mono">React</span>
+                        <span
+                              class="px-4 py-2 bg-emerald-500/10 border border-emerald-400/20 rounded-full text-sm text-emerald-200 font-mono">Next.js</span>
                   </div>
             </div>
       </section>
@@ -737,39 +756,64 @@
                         <p class="text-gray-400 mt-4 font-mono">Some things I've built</p>
                   </div>
 
-                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Project 1 -->
+                  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
                         <div
                               class="group bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-2">
                               <div class="relative overflow-hidden aspect-video neon-border">
-                                    <img src="./image/projects/eventapp.png" alt="Event App"
+                                    <img src="./image/projects/protfolio project.jpeg" alt="Portfolio Website"
                                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                     <div
-                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                          <a href="https://event-web-backend-1.onrender.com" target="_blank"
-                                                class="w-14 h-14 bg-cyan-500 rounded-lg flex items-center justify-center hover:bg-cyan-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fas fa-external-link-alt text-xl"></i>
-                                          </a>
-                                          <a href="https://github.com/shakhaoyat" target="_blank"
-                                                class="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center hover:bg-purple-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fab fa-github text-xl"></i>
-                                          </a>
-                                    </div>
-                                    <div
                                           class="absolute top-3 right-3 px-3 py-1 bg-cyan-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
-                                          Full Stack
+                                          Frontend</div>
+                              </div>
+                              <div class="p-6 space-y-4">
+                                    <div>
+                                          <h3
+                                                class="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300 font-mono">
+                                                Portfolio Website</h3>
+                                          <p class="text-gray-400 leading-relaxed text-sm">A responsive personal
+                                                portfolio with dark visuals, smooth interactions, and sections tailored
+                                                for recruiters and clients.</p>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
+                                          <span
+                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Responsive
+                                                UI</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-3">
+                                          <a href="portfolio-website.html"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500 text-dark font-semibold hover:bg-cyan-400 transition-colors font-mono">View
+                                                More / Details</a>
+                                          <a href="https://shakhaoyat.github.io/PORTFOLIO/" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 transition-colors font-mono">Live
+                                                Demo</a>
                                     </div>
                               </div>
-                              <div class="p-6">
-                                    <h3
-                                          class="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300 font-mono">
-                                          Event Management App
-                                    </h3>
-                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
-                                          <span class="text-cyan-400 font-mono">// </span>Full-stack responsive web
-                                          application with Django backend, RESTful APIs, and automated SMTP email
-                                          notification system.
-                                    </p>
+                        </div>
+
+                        <div
+                              class="group bg-gradient-to-br from-purple-500/10 to-pink-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/eventapp.png" alt="Event Management App"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-purple-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          Full Stack</div>
+                              </div>
+                              <div class="p-6 space-y-4">
+                                    <div>
+                                          <h3
+                                                class="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300 font-mono">
+                                                Event Management App</h3>
+                                          <p class="text-gray-400 leading-relaxed text-sm">A full-stack event platform
+                                                with responsive pages, REST APIs, and automated email notifications.</p>
+                                    </div>
                                     <div class="flex flex-wrap gap-2">
                                           <span
                                                 class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Django</span>
@@ -779,44 +823,37 @@
                                                 class="px-3 py-1 bg-green-600/20 border border-green-500/40 rounded-md text-xs font-mono text-green-300">REST
                                                 API</span>
                                           <span
-                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">CSS
-                                                Grid</span>
+                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">SMTP</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-3">
+                                          <a href="https://event-web-backend-1.onrender.com" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500 text-dark font-semibold hover:bg-purple-400 transition-colors font-mono">Live
+                                                Demo</a>
+                                          <a href="https://github.com/shakhaoyat" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-purple-500/40 text-purple-300 hover:bg-purple-500/10 transition-colors font-mono">GitHub</a>
                                     </div>
                               </div>
                         </div>
 
-                        <!-- Project 2 -->
                         <div
-                              class="group bg-gradient-to-br from-purple-500/10 to-pink-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-2">
+                              class="group bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-green-500/20 hover:border-green-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/30 hover:-translate-y-2">
                               <div class="relative overflow-hidden aspect-video neon-border">
-                                    <img src="./image/projects/protfolio project.jpeg" alt="Portfolio Project"
+                                    <img src="./image/projects/Job Application Tracker.png"
+                                          alt="Job Application Tracker"
                                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                     <div
-                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                          <a href="https://shakhaoyat.github.io/PORTFOLIO/" target="_blank"
-                                                class="w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center hover:bg-purple-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fas fa-external-link-alt text-xl"></i>
-                                          </a>
-                                          <a href="https://github.com/shakhaoyat" target="_blank"
-                                                class="w-14 h-14 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fab fa-github text-xl"></i>
-                                          </a>
-                                    </div>
-                                    <div
-                                          class="absolute top-3 right-3 px-3 py-1 bg-purple-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
-                                          Frontend
-                                    </div>
+                                          class="absolute top-3 right-3 px-3 py-1 bg-green-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          Dashboard</div>
                               </div>
-                              <div class="p-6">
-                                    <h3
-                                          class="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300 font-mono">
-                                          Portfolio Website
-                                    </h3>
-                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
-                                          <span class="text-purple-400 font-mono">// </span>Responsive portfolio with
-                                          modern design principles, dark theme, smooth animations, and mobile-first
-                                          approach.
-                                    </p>
+                              <div class="p-6 space-y-4">
+                                    <div>
+                                          <h3
+                                                class="text-2xl font-bold mb-3 text-white group-hover:text-green-400 transition-colors duration-300 font-mono">
+                                                Job Application Tracker</h3>
+                                          <p class="text-gray-400 leading-relaxed text-sm">An interactive job-tracking
+                                                dashboard with status filtering, statistics, and a clean
+                                                productivity-focused layout.</p>
+                                    </div>
                                     <div class="flex flex-wrap gap-2">
                                           <span
                                                 class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
@@ -825,12 +862,59 @@
                                           <span
                                                 class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
                                           <span
-                                                class="px-3 py-1 bg-indigo-600/20 border border-indigo-500/40 rounded-md text-xs font-mono text-indigo-300">Flexbox</span>
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Tailwind</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-3">
+                                          <a href="job-tracker.html"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-dark font-semibold hover:bg-green-400 transition-colors font-mono">View
+                                                More / Details</a>
+                                          <a href="https://shakhaoyat.github.io/Job-Application-Tracker/"
+                                                target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-green-500/40 text-green-300 hover:bg-green-500/10 transition-colors font-mono">Live
+                                                Demo</a>
                                     </div>
                               </div>
                         </div>
 
-                        <!-- Project 3 -->
+                        <div
+                              class="group bg-gradient-to-br from-indigo-500/10 to-violet-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-indigo-500/20 hover:border-indigo-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/30 hover:-translate-y-2">
+                              <div class="relative overflow-hidden aspect-video neon-border">
+                                    <img src="./image/projects/Payoo Mobile Banking.png" alt="Payoo Mobile Banking"
+                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div
+                                          class="absolute top-3 right-3 px-3 py-1 bg-indigo-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
+                                          FinTech</div>
+                              </div>
+                              <div class="p-6 space-y-4">
+                                    <div>
+                                          <h3
+                                                class="text-2xl font-bold mb-3 text-white group-hover:text-indigo-400 transition-colors duration-300 font-mono">
+                                                Payoo Mobile Banking</h3>
+                                          <p class="text-gray-400 leading-relaxed text-sm">A responsive mobile banking
+                                                interface with secure PIN flow and transaction features designed for
+                                                real-world usability.</p>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2">
+                                          <span
+                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
+                                          <span
+                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
+                                          <span
+                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
+                                          <span
+                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">DaisyUI</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-3">
+                                          <a href="payoo-mobile-banking.html"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-500 text-dark font-semibold hover:bg-indigo-400 transition-colors font-mono">View
+                                                More / Details</a>
+                                          <a href="https://shakhaoyat.github.io/payoo/" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-indigo-500/40 text-indigo-300 hover:bg-indigo-500/10 transition-colors font-mono">Live
+                                                Demo</a>
+                                    </div>
+                              </div>
+                        </div>
+
                         <div
                               class="group bg-gradient-to-br from-orange-500/10 to-red-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-orange-500/20 hover:border-orange-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-2">
                               <div class="relative overflow-hidden aspect-video neon-border">
@@ -838,32 +922,18 @@
                                           alt="IoT Fire Safety System"
                                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                     <div
-                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                          <a href="https://www.linkedin.com/posts/shakhaoyat12_microcontrollerlab-iot-firesafety-activity-7270433675081580545-eIjt"
-                                                target="_blank"
-                                                class="w-14 h-14 bg-orange-500 rounded-lg flex items-center justify-center hover:bg-orange-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fas fa-external-link-alt text-xl"></i>
-                                          </a>
-                                          <a href="https://github.com/shakhaoyat" target="_blank"
-                                                class="w-14 h-14 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fab fa-github text-xl"></i>
-                                          </a>
-                                    </div>
-                                    <div
                                           class="absolute top-3 right-3 px-3 py-1 bg-orange-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
-                                          IoT
-                                    </div>
+                                          IoT</div>
                               </div>
-                              <div class="p-6">
-                                    <h3
-                                          class="text-2xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 font-mono">
-                                          Fire Safety System
-                                    </h3>
-                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
-                                          <span class="text-orange-400 font-mono">// </span>Real-time fire detection
-                                          with GSM alerts and buzzer notifications. Optimized voltage regulation for
-                                          Arduino Uno.
-                                    </p>
+                              <div class="p-6 space-y-4">
+                                    <div>
+                                          <h3
+                                                class="text-2xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors duration-300 font-mono">
+                                                Fire Safety System</h3>
+                                          <p class="text-gray-400 leading-relaxed text-sm">A real-time fire detection
+                                                project with GSM alerts, buzzer notifications, and Arduino-focused
+                                                hardware logic.</p>
+                                    </div>
                                     <div class="flex flex-wrap gap-2">
                                           <span
                                                 class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">Arduino
@@ -876,138 +946,35 @@
                                           <span
                                                 class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">IoT</span>
                                     </div>
-                              </div>
-                        </div>
-
-                        <!-- Project 4: Job Application Tracker -->
-                        <div
-                              class="group bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-green-500/20 hover:border-green-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/30 hover:-translate-y-2">
-                              <div class="relative overflow-hidden aspect-video neon-border">
-                                    <img src="./image/projects/Job Application Tracker.png"
-                                          alt="Job Application Tracker"
-                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                                    <div
-                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                          <a href="https://shakhaoyat.github.io/Job-Application-Tracker/"
+                                    <div class="flex flex-wrap gap-3">
+                                          <a href="https://www.linkedin.com/posts/shakhaoyat12_microcontrollerlab-iot-firesafety-activity-7270433675081580545-eIjt"
                                                 target="_blank"
-                                                class="w-14 h-14 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fas fa-external-link-alt text-xl"></i>
-                                          </a>
-                                          <a href="https://github.com/shakhaoyat/Job-Application-Tracker"
-                                                target="_blank"
-                                                class="w-14 h-14 bg-emerald-600 rounded-lg flex items-center justify-center hover:bg-emerald-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fab fa-github text-xl"></i>
-                                          </a>
-                                    </div>
-                                    <div
-                                          class="absolute top-3 right-3 px-3 py-1 bg-green-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
-                                          Frontend
-                                    </div>
-                              </div>
-                              <div class="p-6">
-                                    <h3
-                                          class="text-2xl font-bold mb-3 text-white group-hover:text-green-400 transition-colors duration-300 font-mono">
-                                          Job Application Tracker
-                                    </h3>
-                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
-                                          <span class="text-green-400 font-mono">// </span>Interactive job tracking
-                                          dashboard with real-time statistics and dynamic filtering by status. Fully
-                                          responsive UI built with modern frameworks.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                          <span
-                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
-                                          <span
-                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
-                                          <span
-                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
-                                          <span
-                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Tailwind</span>
-                                          <span
-                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">DaisyUI</span>
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500 text-dark font-semibold hover:bg-orange-400 transition-colors font-mono">Live
+                                                Demo</a>
+                                          <a href="https://github.com/shakhaoyat" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-orange-500/40 text-orange-300 hover:bg-orange-500/10 transition-colors font-mono">GitHub</a>
                                     </div>
                               </div>
                         </div>
 
-                        <!-- Project 5: Payoo Mobile Banking -->
-                        <div
-                              class="group bg-gradient-to-br from-indigo-500/10 to-violet-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-indigo-500/20 hover:border-indigo-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/30 hover:-translate-y-2">
-                              <div class="relative overflow-hidden aspect-video neon-border">
-                                    <img src="./image/projects/Payoo Mobile Banking.png" alt="Payoo Mobile Banking"
-                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                                    <div
-                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                          <a href="https://shakhaoyat.github.io/payoo/" target="_blank"
-                                                class="w-14 h-14 bg-indigo-500 rounded-lg flex items-center justify-center hover:bg-indigo-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fas fa-external-link-alt text-xl"></i>
-                                          </a>
-                                          <a href="https://github.com/shakhaoyat/payoo" target="_blank"
-                                                class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center hover:bg-violet-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fab fa-github text-xl"></i>
-                                          </a>
-                                    </div>
-                                    <div
-                                          class="absolute top-3 right-3 px-3 py-1 bg-indigo-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
-                                          FinTech
-                                    </div>
-                              </div>
-                              <div class="p-6">
-                                    <h3
-                                          class="text-2xl font-bold mb-3 text-white group-hover:text-indigo-400 transition-colors duration-300 font-mono">
-                                          Payoo Mobile Banking
-                                    </h3>
-                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
-                                          <span class="text-indigo-400 font-mono">// </span>Responsive mobile banking
-                                          app with secure PIN authentication, financial features including add money,
-                                          cashout, send money, and transaction history.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                          <span
-                                                class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
-                                          <span
-                                                class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 rounded-md text-xs font-mono text-blue-300">CSS3</span>
-                                          <span
-                                                class="px-3 py-1 bg-yellow-600/20 border border-yellow-500/40 rounded-md text-xs font-mono text-yellow-300">JavaScript</span>
-                                          <span
-                                                class="px-3 py-1 bg-cyan-600/20 border border-cyan-500/40 rounded-md text-xs font-mono text-cyan-300">Tailwind</span>
-                                          <span
-                                                class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">DaisyUI</span>
-                                    </div>
-                              </div>
-                        </div>
-
-                        <!-- Project 6: TechWave Podcast -->
                         <div
                               class="group bg-gradient-to-br from-teal-500/10 to-cyan-600/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-teal-500/20 hover:border-teal-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/30 hover:-translate-y-2">
                               <div class="relative overflow-hidden aspect-video neon-border">
                                     <img src="./image/projects/TechWave Podcast.png" alt="TechWave Podcast"
                                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                     <div
-                                          class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                          <a href="https://shakhaoyat.github.io/TechWave/" target="_blank"
-                                                class="w-14 h-14 bg-teal-500 rounded-lg flex items-center justify-center hover:bg-teal-400 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fas fa-external-link-alt text-xl"></i>
-                                          </a>
-                                          <a href="https://github.com/shakhaoyat/TechWave" target="_blank"
-                                                class="w-14 h-14 bg-cyan-600 rounded-lg flex items-center justify-center hover:bg-cyan-500 transform hover:scale-110 transition-all duration-300 shadow-lg">
-                                                <i class="fab fa-github text-xl"></i>
-                                          </a>
-                                    </div>
-                                    <div
                                           class="absolute top-3 right-3 px-3 py-1 bg-teal-500/90 backdrop-blur-sm rounded-full text-xs font-mono font-semibold">
-                                          Media
-                                    </div>
+                                          Media</div>
                               </div>
-                              <div class="p-6">
-                                    <h3
-                                          class="text-2xl font-bold mb-3 text-white group-hover:text-teal-400 transition-colors duration-300 font-mono">
-                                          TechWave Podcast
-                                    </h3>
-                                    <p class="text-gray-400 mb-4 leading-relaxed text-sm">
-                                          <span class="text-teal-400 font-mono">// </span>Fully responsive podcast
-                                          website optimized for all devices. Modern UI layout with Flexbox and Grid,
-                                          featuring embedded multimedia content.
-                                    </p>
+                              <div class="p-6 space-y-4">
+                                    <div>
+                                          <h3
+                                                class="text-2xl font-bold mb-3 text-white group-hover:text-teal-400 transition-colors duration-300 font-mono">
+                                                TechWave Podcast</h3>
+                                          <p class="text-gray-400 leading-relaxed text-sm">A fully responsive podcast
+                                                website built around clear layouts, multimedia content, and flexible
+                                                grids.</p>
+                                    </div>
                                     <div class="flex flex-wrap gap-2">
                                           <span
                                                 class="px-3 py-1 bg-red-600/20 border border-red-500/40 rounded-md text-xs font-mono text-red-300">HTML5</span>
@@ -1018,11 +985,17 @@
                                           <span
                                                 class="px-3 py-1 bg-purple-600/20 border border-purple-500/40 rounded-md text-xs font-mono text-purple-300">Grid</span>
                                     </div>
+                                    <div class="flex flex-wrap gap-3">
+                                          <a href="https://shakhaoyat.github.io/TechWave/" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500 text-dark font-semibold hover:bg-teal-400 transition-colors font-mono">Live
+                                                Demo</a>
+                                          <a href="https://github.com/shakhaoyat/TechWave" target="_blank"
+                                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-teal-500/40 text-teal-300 hover:bg-teal-500/10 transition-colors font-mono">GitHub</a>
+                                    </div>
                               </div>
                         </div>
                   </div>
 
-                  <!-- View More Projects Button -->
                   <div class="text-center mt-12">
                         <a href="https://github.com/shakhaoyat" target="_blank"
                               class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-600/20 to-purple-600/20 border-2 border-cyan-500/50 rounded-lg hover:bg-gradient-to-r hover:from-cyan-600/30 hover:to-purple-600/30 hover:border-cyan-400 transition-all duration-300 font-mono font-semibold group">
@@ -1303,36 +1276,39 @@
                                                 class="text-cyan-400">=</span> {'{'}
                                     </h3>
                                     <div class="pl-6 space-y-3 font-mono text-sm">
-                                          <div class="flex items-center gap-2">
-                                                <span class="text-purple-400">name:</span>
-                                                <span class="text-green-300">"Shakhaoyat Hossain Chad"</span><span
-                                                      class="text-gray-500">,</span>
-                                          </div>
-                                          <div class="flex items-center gap-2">
-                                                <span class="text-purple-400">role:</span>
-                                                <span class="text-green-300">"Full Stack Developer"</span><span
-                                                      class="text-gray-500">,</span>
-                                          </div>
-                                          <div class="flex items-center gap-2">
-                                                <span class="text-purple-400">email:</span>
-                                                <a href="mailto:shakhaoyathossain.12@gmail.com"
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">name:</span><span
+                                                      class="text-green-300">"Shakhaoyat Hossain Chad"</span><span
+                                                      class="text-gray-500">,</span></div>
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">role:</span><span
+                                                      class="text-green-300">"Full Stack Developer"</span><span
+                                                      class="text-gray-500">,</span></div>
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">email:</span><a
+                                                      href="mailto:shakhaoyathossain.12@gmail.com"
                                                       class="text-cyan-300 hover:text-cyan-200 hover:underline">"shakhaoyathossain.12@gmail.com"</a><span
-                                                      class="text-gray-500">,</span>
-                                          </div>
-                                          <div class="flex items-center gap-2">
-                                                <span class="text-purple-400">location:</span>
-                                                <span class="text-green-300">"Rajshahi, Bangladesh"</span><span
-                                                      class="text-gray-500">,</span>
-                                          </div>
-                                          <div class="flex items-center gap-2">
-                                                <span class="text-purple-400">available:</span>
-                                                <span class="text-yellow-300">true</span>
-                                          </div>
+                                                      class="text-gray-500">,</span></div>
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">phone:</span><span
+                                                      class="text-green-300">"Available on request"</span><span
+                                                      class="text-gray-500">,</span></div>
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">whatsapp:</span><span
+                                                      class="text-green-300">"Available on request"</span><span
+                                                      class="text-gray-500">,</span></div>
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">location:</span><span
+                                                      class="text-green-300">"Rajshahi, Bangladesh"</span><span
+                                                      class="text-gray-500">,</span></div>
+                                          <div class="flex items-center gap-2"><span
+                                                      class="text-purple-400">available:</span><span
+                                                      class="text-yellow-300">true</span></div>
                                     </div>
                                     <p class="mt-4 font-mono">{'}'}</p>
                               </div>
 
-                              <div class="grid grid-cols-2 gap-4">
+                              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <a href="https://github.com/shakhaoyat" target="_blank"
                                           class="group flex items-center gap-3 p-4 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm rounded-xl border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
                                           <div
@@ -1434,10 +1410,6 @@
                               <a href="mailto:shakhaoyathossain.12@gmail.com"
                                     class="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-600/10 border border-blue-500/30 hover:bg-blue-500 hover:border-blue-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
                                     <i class="fas fa-envelope text-blue-400"></i>
-                              </a>
-                              <a href="#" target="_blank"
-                                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-cyan-600/10 border border-cyan-500/30 hover:bg-cyan-500 hover:border-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6">
-                                    <i class="fab fa-twitter text-cyan-400"></i>
                               </a>
                         </div>
                   </div>

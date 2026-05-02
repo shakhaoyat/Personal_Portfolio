@@ -1,5 +1,21 @@
 // Smooth scrolling for navigation links
 const navLinks = document.querySelectorAll('.nav-link');
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+
+if (mobileMenuButton && mobileMenuPanel) {
+      mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenuPanel.classList.contains('hidden');
+            mobileMenuPanel.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', String(isHidden));
+
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon) {
+                  icon.classList.toggle('fa-bars');
+                  icon.classList.toggle('fa-times');
+            }
+      });
+}
 
 navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
@@ -13,6 +29,18 @@ navLinks.forEach(link => {
                         top: offsetTop,
                         behavior: 'smooth'
                   });
+            }
+
+            if (mobileMenuPanel && !mobileMenuPanel.classList.contains('hidden')) {
+                  mobileMenuPanel.classList.add('hidden');
+                  if (mobileMenuButton) {
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                              icon.classList.add('fa-bars');
+                              icon.classList.remove('fa-times');
+                        }
+                  }
             }
       });
 });
